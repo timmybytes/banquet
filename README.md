@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./public/next-dish.svg" alt="Next Dish Logo" />
+  <img width="400" src="./public/next-dish.svg" alt="Next Dish Logo" />
 </h1>
 
 <div align="center">
@@ -10,13 +10,15 @@
 
 <div align="center">
   <br />
+  <h1>Next Dish</h1>
   <strong>A Next.js Boilerplate Project</strong>
   <br />
 </div>
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-It includes the following out of the box:
+<br />
+
+<!-- prettier-ignore -->
+This is a [Next.js](https://nextjs.org/) project bootstrapped with[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It includes the following out of the box:
 
 - [Next.js](https//nextjs.org) + [TypeScript](https://www.typescriptlang.org/)
 - [Mantine Hooks & Components Library](https//mantine.dev)
@@ -25,6 +27,8 @@ It includes the following out of the box:
   [React Testing Library](https://github.com/testing-library/react-testing-library)
 
 ## Structure
+
+Next Dish follows a typical React project style:
 
 ```
 public/
@@ -36,6 +40,7 @@ src/
   pages/
   styles/
   utils/
+test/
 ```
 
 ## Getting Started
