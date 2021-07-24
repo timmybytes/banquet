@@ -1,6 +1,6 @@
-<h1 align="center">
+<div align="center">
   <img width="400" src="./public/next-dish.svg" alt="Next Dish Logo" />
-</h1>
+</div>
 
 <div align="center">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/timmybytes/next-dish?color=ff90ad">
