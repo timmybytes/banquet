@@ -1,0 +1,13 @@
+import styles from './{{pascalCase name}}.module.scss';
+
+type {{pascalCase name}}Props = {
+  children: React.ReactNode;
+}
+
+export const {{pascalCase name}} = ({children}: {{pascalCase name}}Props) => {
+  return (
+    <div className={styles.{{pascalCase name}} }>
+      {children}
+    </div>
+  );
+};
