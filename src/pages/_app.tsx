@@ -1,4 +1,5 @@
 import { GlobalStyles, MantineProvider, NormalizeCSS } from '@mantine/core';
+import '@styles/globals.scss';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect } from 'react';

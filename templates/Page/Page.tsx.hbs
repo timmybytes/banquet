@@ -1,0 +1,43 @@
+import styles from '@styles/Page.module.scss';
+import Head from 'next/head';
+import Image from 'next/image';
+
+export default function About() {
+return (
+<div className={styles.page}>
+
+  <Head>
+    <title>Main Course | {{name}}</title>
+    <meta name='description' content='A hearty Next.js template' />
+    <link rel='icon' href='/favicon.ico' />
+  </Head>
+
+  <main className={styles.main}>
+    <h1 className={styles.title}>{{name}}</h1>
+    <div className={styles.description}>
+      <h2>Dummy text</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat,
+        ea nemo cupiditate officiis totam a accusamus, sint, sunt
+        praesentium tenetur eveniet neque repudiandae consequuntur eius
+        error minima perspiciatis cumque unde?
+      </p>
+      <h2>Code</h2>
+      <pre>
+            <code>const something = (x) ={'>'} return x</code>
+          </pre>
+    </div>
+  </main>
+
+  <footer className={styles.footer}>
+    <a href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
+      target='_blank' rel='noopener noreferrer'>
+      Made with 🍽 by Timothy Merritt
+      <span className={styles.logo}>
+        <Image src='/vercel.svg' alt='Vercel Logo' width={72} height={16} />
+      </span>
+    </a>
+  </footer>
+</div>
+);
+}
