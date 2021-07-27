@@ -1,16 +1,16 @@
 import styles from '@styles/Home.module.scss';
 import Head from 'next/head';
 import Image from 'next/image';
+import React from 'react';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Main Course</title>
         <meta name='description' content='A hearty Next.js template' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to{' '}
@@ -64,6 +64,6 @@ export default function Home() {
           </span>
         </a>
       </footer>
-    </div>
+    </>
   );
 }
