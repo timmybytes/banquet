@@ -7,8 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
-    "test-quiet": "jest --silent",
+    "test": "jest --config jest.config.js",
+    "test-quiet": "jest --silent --config jest.config.js",
+    "scrutiny": "yarn test-quiet && yarn tsc --noEmit",
     "generate": "plop",
     "prepare": "husky install"
   },
@@ -47,7 +48,7 @@
       "eslint --fix"
     ],
     "**/*.(js|json|ts|tsx)": [
-      "prettier --write"
+      "prettier --write ./.prettierrc"
     ]
   }
 }
