@@ -7,8 +7,9 @@ body {
 }
 
 a {
-  color: inherit;
+  color: rgb(32, 131, 218);
   text-decoration: none;
+  font-weight: bolder;
 }
 
 * {
@@ -17,7 +18,7 @@ a {
 
 code {
   background: #d1d1d1;
-  font-family: 'Menlo', monospace;
+  font-family: "Menlo", monospace;
   padding: 1em;
   border-radius: 6px;
 }

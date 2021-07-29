@@ -1,7 +1,8 @@
-import { Card } from "@mantine/core";
 import { Footer } from "@components/general/Footer";
+import { Card } from "@mantine/core";
 import styles from "@styles/Home.module.scss";
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 
 export default function Home() {
@@ -13,16 +14,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to{" "}
-          <span style={{ fontFamily: "Playfair Display", fontStyle: "italic" }}>
-            Main Course!
-          </span>
-        </h1>
+        <h1 className={styles.title}>Welcome to Main Course!</h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+          Visit the{" "}
+          <Link href="/examples">
+            <a>Examples page</a>
+          </Link>
+        </p>
+        <p className={styles.description}>
+          Visit the{" "}
+          <Link href="/mantine">
+            <a>Mantine UI page</a>
+          </Link>
         </p>
 
         <div className={styles.grid}>
