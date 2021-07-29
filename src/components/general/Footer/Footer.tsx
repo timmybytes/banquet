@@ -24,7 +24,7 @@ export const Footer = ({ children }: FooterProps) => {
             height="48px"
           />
         </span>
-        <span>Timothy Merritt, &copy; {copyright}</span>
+        <span>Timothy Merritt &copy; {copyright}</span>
       </a>
       {children}
     </footer>
