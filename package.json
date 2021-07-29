@@ -9,7 +9,8 @@
     "start": "next start",
     "test": "jest --config jest.config.js",
     "test-quiet": "jest --silent --config jest.config.js",
-    "scrutiny": "yarn test-quiet && yarn tsc --noEmit",
+    "test-staged:dev": "jest --silent --config jest.config.js --changedSince=dev",
+    "scrutiny": "yarn test-staged && yarn tsc --noEmit",
     "generate": "plop",
     "prepare": "husky install"
   },
