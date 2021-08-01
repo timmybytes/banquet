@@ -1,4 +1,4 @@
-import { Footer } from "@components/general/Footer";
+import { Footer } from "@components/Footer";
 import { Card } from "@mantine/core";
 import styles from "@styles/Home.module.scss";
 import Head from "next/head";

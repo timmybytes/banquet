@@ -1,5 +1,6 @@
-import { Footer } from "@components/general/Footer";
-import { ContactForm } from "@components/mantine/ContactForm";
+import { ContactForm } from "@components/ContactForm";
+// import { FormWrapper } from "@components/ContactForm/Form";
+import { Footer } from "@components/Footer";
 import {
   Badge,
   Container,
@@ -17,7 +18,7 @@ export default function Mantine() {
   const [controlValue, setControlValue] = useState("contact");
 
   return (
-    <div className={styles.page}>
+    <>
       <Head>
         <title>Main Course | Examples</title>
         <meta name="description" content="A hearty Next.js template" />
@@ -67,10 +68,13 @@ export default function Mantine() {
               {controlValue === "post" && "<PostForm /> coming soon!"}
             </Paper>
           </Paper>
+          <Paper style={{ margin: ".5rem 0 10rem" }}>
+            {/* <FormWrapper formType="comment" /> */}
+          </Paper>
         </Container>
       </main>
 
       <Footer />
-    </div>
+    </>
   );
 }

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { Button, Textarea, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/hooks";
-import { TextInput, Textarea, Button } from "@mantine/core";
+import React, { useState } from "react";
 
 export const ContactForm = () => {
   interface EntriesProps {
