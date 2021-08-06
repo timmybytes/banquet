@@ -1,27 +1,33 @@
-<!-- <div align="center">
-  <img width="400" src="./public/next-dish.svg" alt="Next Dish Logo" />
-</div> -->
-
-<!-- <div align="center">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/timmybytes/next-dish?color=ff90ad">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/timmybytes/next-dish?color=b8dcff">
-  <img alt="GitHub" src="https://img.shields.io/github/license/timmybytes/next-dish?color=caffbf">
-</div> -->
-
 <div align="center">
-  <br />
+  <img src="/public/main-course-logo.svg" width="200px" alt="Next Dish Logo" />
   <h1>Main Course</h1>
-  <strong>A hearty Next.js template</strong>
-  <br />
 </div>
 
-<br />
+<div align="center">
+  <strong>A hearty Next.js boilerplate with component generation</strong>
+</div>
+
+<div align="center">
+  <img alt="Netlify" src="https://img.shields.io/netlify/8fda250e-338f-4ad0-b887-dbf08ff7781e">
+  <img alt="GitHub" src="https://img.shields.io/github/license/timmybytes/main-course">
+  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/timmybytes/main-course">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/timmybytes/main-course">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/timmybytes/main-course">
+  <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/timmybytes/main-course">
+</div>
+
+<p align="center">
+  <sub>🍴 Built with 🍲 by <a href="https://timmybytes.com"target="_blank"rel="noopener noreferrer">Timothy Merritt</a> 🍴</sub>
+</p>
 
 <!-- prettier-ignore -->
+<p align="center">
+  ✨ Currently a work-in-progress ✨
+</p>
+
 This is a [Next.js](https://nextjs.org/) template bootstrapped from [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's configured for the following out of the box:
 
 - [Next.js](https//nextjs.org) + [TypeScript](https://www.typescriptlang.org/)
-- [Mantine Hooks & Components Library](https//mantine.dev) for a great looking UI with tons of useful pre-built hooks
 - [CSS Modules](https://github.com/css-modules/css-modules) support
 - [Jest](https://github.com/facebook/jest) + [React Testing Library](https://github.com/testing-library/react-testing-library)
 - [Plop.js](https://github.com/plopjs/plop) for creating new components, pages, etc. from templates
@@ -66,4 +72,5 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## License
+
 Main Course is offered under an MIT license.

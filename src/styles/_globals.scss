@@ -1,13 +1,27 @@
+@use 'theme.scss' as *;
+@use 'fonts.scss' as *;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
 }
 
 a {
-  color: rgb(32, 131, 218);
+  color: $steel-blue;
   text-decoration: none;
   font-weight: bolder;
 }
@@ -17,7 +31,6 @@ a {
 }
 
 code {
-  background: #d1d1d1;
   font-family: "Menlo", monospace;
   padding: 1em;
   border-radius: 6px;

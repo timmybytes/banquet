@@ -1,11 +1,4 @@
-import {
-  Accordion,
-  AccordionItem,
-  Container,
-  Paper,
-  Text,
-  Title,
-} from "@mantine/core";
+import styles from "@/styles/Home.module.scss";
 import Head from "next/head";
 import React from "react";
 
@@ -17,7 +10,8 @@ export default function Home() {
         <meta name="description" content="A hearty Next.js template" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container
+      <div
+        className={styles.root}
         style={{
           padding: "2rem",
           height: "100vh",
@@ -28,9 +22,10 @@ export default function Home() {
           justifyContent: "center",
         }}
       >
-        <Paper
-          shadow="lg"
+        <div
           style={{
+            borderRadius: "8px",
+            boxShadow: "4px 4px 15px 0 rgba(0,0,0,0.3)",
             padding: "2rem",
             height: "80%",
             width: "80%",
@@ -40,31 +35,35 @@ export default function Home() {
             justifyContent: "flex-start",
           }}
         >
-          <Title
-            align="center"
-            order={1}
+          <h1
             style={{
+              textAlign: "center",
               fontFamily: "Playfair Display",
               fontStyle: "italic",
               fontSize: "3rem",
             }}
           >
             Welcome to Main Course!
-          </Title>
+          </h1>
 
-          <Text style={{ maxWidth: "65ch", padding: "1rem" }}>
+          <p style={{ maxWidth: "65ch", padding: "1rem" }}>
             This is a template for building a static site with Next, Plop,
-            Mantine UI, Typescript, Husky, Prettier, ESLint, and Jest/React
-            Testing Library. Main Course is currently very much a{" "}
+            Typescript, Husky, Prettier, ESLint, and Jest/React Testing Library.
+            Main Course is currently very much a{" "}
             <strong>work in progress</strong>, so while it will eventually be a
             robust boilerplate, use at your own risk while it's still being
             developed!
-          </Text>
+          </p>
 
-          <Title
-            align="center"
-            order={2}
+          <p>
+            <a href="https://github.com/timmybytes/main-course">
+              See the source on GitHub
+            </a>
+          </p>
+
+          <h2
             style={{
+              textAlign: "center",
               fontFamily: "Playfair Display",
               fontStyle: "italic",
               padding: "1rem",
@@ -72,51 +71,11 @@ export default function Home() {
             }}
           >
             Menu
-          </Title>
-          <Accordion>
-            <AccordionItem label="Next.js Features">
-              <a href="https://nextjs.org">Next.js</a> features performance
-              optimization, static site generation, routing, image optimization,
-              and more.
-            </AccordionItem>
-            <AccordionItem label="Automate creation of components, pages, etc.">
-              <a href="https://plopjs.com">Plop.js</a> is a tool for creating
-              code from templates, and is used here to generate the components,
-              pages, and other files that make up your site.
-            </AccordionItem>
-            <AccordionItem label="Mantine UI">
-              <a href="https://mantine.dev">Mantine</a> is a set of React
-              components and custom hooks for building user interfaces.
-            </AccordionItem>
-            <AccordionItem label="Typescript">
-              <a href="https://www.typescriptlang.org">Typescript</a> is a typed
-              superset of JavaScript that compiles to plain JavaScript.
-            </AccordionItem>
-            <AccordionItem label="Husky">
-              <a href="https://husky.github.io">Husky</a> is a Git hooks manager
-              for your project.
-            </AccordionItem>
-            <AccordionItem label="Prettier">
-              <a href="https://prettier.io">Prettier</a> is a tool for
-              formatting your code.
-            </AccordionItem>
-            <AccordionItem label="ESLint">
-              <a href="https://eslint.org">ESLint</a> is a tool for linting
-              JavaScript.
-            </AccordionItem>
-            <AccordionItem label="Jest">
-              <a href="https://jestjs.io">Jest</a> is a testing library for
-              React.
-            </AccordionItem>
-            <AccordionItem label="React Testing Library">
-              <a href="https://testing-library.com/docs/react-testing-library/intro/">
-                React Testing Library
-              </a>{" "}
-              is a testing library for React.
-            </AccordionItem>
-          </Accordion>
-        </Paper>
-      </Container>
+          </h2>
+
+          <p>Coming soon...</p>
+        </div>
+      </div>
     </>
   );
 }
