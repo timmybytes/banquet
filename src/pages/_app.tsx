@@ -1,18 +1,21 @@
 import "@/styles/_globals.scss";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { AppProps } from "next/app";
-import Head from "next/head";
+
+const colors = {
+  brand: {
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#2a69ac",
+  },
+};
+const theme = extendTheme({ colors });
 
 export default function App({ Component, pageProps }: AppProps) {
+  console.log(theme);
   return (
-    <>
-      <Head>
-        <title>Main Course | A hearty Next.js boilerplate</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-      </Head>
+    <ChakraProvider theme={theme}>
       <Component {...pageProps} />
-    </>
+    </ChakraProvider>
   );
 }

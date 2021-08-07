@@ -1,6 +1,7 @@
 import styles from "@/styles/Home.module.scss";
 import Head from "next/head";
 import React from "react";
+import { Header } from "../components/Header";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <meta name="description" content="A hearty Next.js template" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <div
         className={styles.root}
         style={{

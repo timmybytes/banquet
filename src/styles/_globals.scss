@@ -9,21 +9,21 @@ body {
 
 body {
   font-family: "Source Sans Pro", sans-serif;
+  background: $cultured;
+  color: $rich-black-fogra-29;
 }
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   font-family: "Playfair Display", serif;
+  font-weight: 900;
 }
 
 a {
   color: $steel-blue;
   text-decoration: none;
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 * {
