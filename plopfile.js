@@ -1,53 +1,82 @@
-module.exports = (plop) => {
-  plop.setGenerator("Component", {
-    description: "Create a new component with default configuration",
+module.exports = plop => {
+  plop.setGenerator('Component', {
+    description: 'Create a new component',
     prompts: [
       {
-        type: "input",
-        name: "name",
-        message: "Enter a name for the component",
+        type: 'input',
+        name: 'name',
+        message: 'Enter a name for the component',
+      },
+      {
+        type: 'list',
+        name: 'type',
+        message: 'Select a type for the component',
+        choices: [
+          {
+            name: 'Component with SCSS module, test, and index file',
+            value: 'full',
+          },
+          {
+            name: 'Component only',
+            value: 'basic',
+          },
+        ],
       },
     ],
-    actions: [
-      {
-        type: "add",
-        path: "src/components/{{pascalCase name}}/{{pascalCase name}}.tsx",
-        templateFile: "templates/Component/Component.tsx.hbs",
-      },
-      {
-        type: "add",
-        path: "src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
-        templateFile: "templates/Component/Component.test.tsx.hbs",
-      },
-      {
-        type: "add",
-        path: "src/components/{{pascalCase name}}/{{pascalCase name}}.module.scss",
-        templateFile: "templates/Component/Component.module.scss.hbs",
-      },
-      {
-        type: "add",
-        path: "src/components/{{pascalCase name}}/index.ts",
-        templateFile: "templates/Component/index.ts.hbs",
-      },
-    ],
-  });
-  plop.setGenerator("Page", {
-    description: "Create a new page",
-    prompts: [
-      {
-        type: "input",
-        name: "name",
-        message: "Enter a name for the page",
-      },
-    ],
-    actions: [
-      {
-        type: "add",
-        path: "src/pages/{{lowerCase name}}.tsx",
-        templateFile: "templates/Page/Page.tsx.hbs",
-      },
-    ],
-  });
+    actions: function (data) {
+      var actions = []
+
+      if (data.type === 'full') {
+        actions.push(
+          {
+            type: 'add',
+            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
+            templateFile: 'templates/Component/Component.tsx.hbs',
+          },
+          {
+            type: 'add',
+            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+            templateFile: 'templates/Component/Component.test.tsx.hbs',
+          },
+          {
+            type: 'add',
+            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.module.scss',
+            templateFile: 'templates/Component/Component.module.scss.hbs',
+          },
+          {
+            type: 'add',
+            path: 'src/components/{{pascalCase name}}/index.ts',
+            templateFile: 'templates/Component/index.ts.hbs',
+          }
+        )
+      } else {
+        actions.push({
+          type: 'add',
+          path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
+          templateFile: 'templates/Component/Component.tsx.hbs',
+        })
+      }
+
+      return actions
+    },
+  }),
+    plop.setGenerator('Page', {
+      description: 'Create a new page',
+      prompts: [
+        {
+          type: 'input',
+          name: 'name',
+          message: 'Enter a name for the page',
+        },
+      ],
+      actions: [
+        {
+          type: 'add',
+          path: 'src/pages/{{lowerCase name}}.tsx',
+          templateFile: 'templates/Page/Page.tsx.hbs',
+        },
+      ],
+    })
   // TODO: Pages
   //   plop.setGenerator('page', {
   //     description: 'Create a page',
@@ -171,4 +200,4 @@ module.exports = (plop) => {
   //       },
   //     ],
   //   });
-};
+}

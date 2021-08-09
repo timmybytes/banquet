@@ -1,3 +1,5 @@
+<!-- Header Content -->
+
 <div align="center">
   <img src="/public/main-course-logo.svg" width="200px" alt="Next Dish Logo" />
   <h1>Main Course</h1>
@@ -25,18 +27,27 @@
   ✨ Currently a work-in-progress ✨
 </p>
 
-This is a [Next.js](https://nextjs.org/) template bootstrapped from [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's configured for the following out of the box:
+<!-- Main Content -->
+
+This is a [Next.js](https://nextjs.org/) boilerplate bootstrapped from [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's configured with the following out of the box:
 
 - [Next.js](https//nextjs.org) + [TypeScript](https://www.typescriptlang.org/)
-- [CSS Modules](https://github.com/css-modules/css-modules) support
+- Support for [CSS Modules](https://github.com/css-modules/css-modules) with SCSS/SASS
 - [Jest](https://github.com/facebook/jest) + [React Testing Library](https://github.com/testing-library/react-testing-library)
-- [Plop.js](https://github.com/plopjs/plop) for creating new components, pages, etc. from templates
+- [Chakra UI](https://chakra-ui.com/)
+- [Plop.js](https://github.com/plopjs/plop) - generates whole components, tests, pages, etc., from simple CLI commands
 
 ## About
 
-There are many great templates out there for settings up a web development project, but there always tends to be a few things I want that are missing from all of them. **Main Course** aims to solve this by front-loading more tools and configurations into a template, with less tinkering required. It is built to my own personal preferences, so your mileage may vary.
+There are _many_ great templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from all of them. **Main Course** aims to solve this by front-loading more tools and configurations into a template (without overloading it), with less tinkering required. It is built to my own personal preferences, so your mileage may vary, but I think it tastes pretty good.
 
 ## Features
+
+### Automated component, test, page, etc., generation
+
+<!-- TODO: Plop doc & config -->
+
+### Structure
 
 Main Course follows a common React project style:
 
