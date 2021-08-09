@@ -8,13 +8,20 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --config jest.config.js",
-    "test-quiet": "jest --silent --config jest.config.js",
-    "test-staged": "jest --silent --config jest.config.js -o",
-    "scrutiny": "yarn test-staged && yarn tsc --noEmit",
+    "test:watch": "yarn test --watch",
     "generate": "plop",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --write './{src,templates}/**/*'",
+    "lint": "eslint '{src,templates}/**/*.{js,jsx,ts,tsx}'",
+    "lint-fix": "yarn lint --fix",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.14",
+    "@chakra-ui/react": "^1.6.5",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^4",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -31,10 +38,13 @@
     "@types/node": "^16.4.1",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^27.0.6",
     "eslint": "^7.31.0",
     "eslint-config-next": "^11.0.1",
+    "eslint-plugin-react": "^7.24.0",
     "husky": "^7.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
@@ -48,7 +58,7 @@
       "eslint --fix"
     ],
     "**/*.(js|json|ts|tsx)": [
-      "prettier --write ./.prettierrc"
+      "prettier --write"
     ]
   }
 }
