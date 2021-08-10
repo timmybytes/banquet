@@ -6,7 +6,7 @@
 </div>
 
 <div align="center">
-  <strong>A hearty Next.js boilerplate with component generation</strong>
+  <p>A hearty Next.js boilerplate</p>
 </div>
 
 <div align="center">
@@ -29,25 +29,33 @@
 
 <!-- Main Content -->
 
-This is a [Next.js](https://nextjs.org/) boilerplate bootstrapped from [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's configured with the following out of the box:
+## 🍛 Contents
+
+- [About](#about)
+- [Features](#features)
+  - [Structure](#structure)
+  - [Plop.js](#bake-new-components-pages-etc-with-plopjs)
+  - [Chakra UI](#️chakra-ui)
+- [Getting Started](#getting-started)
+- [License](./LICENSE)
+
+## 🥘 About
+
+🥙 Main Course is an opinionated boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from all of them. Main Course aims to solve this by front-loading more tools and configurations as defaults (without overloading it), with less tinkering required.
+
+It's configured with the following out of the box:
 
 - [Next.js](https//nextjs.org) + [TypeScript](https://www.typescriptlang.org/)
 - Support for [CSS Modules](https://github.com/css-modules/css-modules) with SCSS/SASS
 - [Jest](https://github.com/facebook/jest) + [React Testing Library](https://github.com/testing-library/react-testing-library)
 - [Chakra UI](https://chakra-ui.com/)
-- [Plop.js](https://github.com/plopjs/plop) - generates whole components, tests, pages, etc., from simple CLI commands
+- [Plop.js](https://github.com/plopjs/plop) code generator
 
-## About
+## 🍡 Features
 
-There are _many_ great templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from all of them. **Main Course** aims to solve this by front-loading more tools and configurations into a template (without overloading it), with less tinkering required. It is built to my own personal preferences, so your mileage may vary, but I think it tastes pretty good.
+Main Course is bootstrapped from `create-next-app` with support for TypeScript, (S)CSS Modules, Jest testing, Plop code generation, and Chakra UI.
 
-## Features
-
-### Automated component, test, page, etc., generation
-
-<!-- TODO: Plop doc & config -->
-
-### Structure
+### 🍱 Structure
 
 Main Course follows a common React project style:
 
@@ -58,19 +66,53 @@ public/
 src/
   assets/
   components/
+    SomeComponent/
+      SomeComponent.tsx
+      SomeComponent.test.tsx
+      SomeComponent.module.scss
+      index.ts
   pages/
+    _app.tsx
+    index.tsx
   styles/
+    _theme.scss
   utils/
-test/
+  ...
 ```
 
-## Getting Started
+This differs a little from the initial Next.js structure, which doesn't use a `src` directory by default, but is still [fully compatible with all of Next's features](https://nextjs.org/docs/advanced-features/src-directory).
 
-First, run the development server:
+Components are also kept in their own directories with related files, and when creating new components and pages with [`yarn bake`](./docs/plop.md), the same structure is followed by default.
+
+### 🧁 Plop.js: Bake new components, pages, etc.
+
+Main Course comes with a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [`.hbs`](https://handlebarsjs.com/guide/) templates—or create ones yourself!
+
+The included templates can generate:
+
+- A new `tsx` component with accompanying `.test`, `.scss`, and `index.ts` files inside their own directory in `src/components`
+- _Only_ a `.tsx` component inside its own directory in `src/components`
+- A new page inside `src/pages`
+
+To use it, run `yarn bake` from the terminal, and choose from the options available, or [read more about using Plop in Main Course](docs/plop.md).
+
+### ⚡️ Chakra UI
+
+Main Course also includes [Chakra UI](https://chakra-ui.com/) as a dependency. Main Course uses Chakra because of its flexibility, ease of use, and accessibility. You can use it as a basis for a project theme, customize the Chakra components, or delete it altogether if it isn't useful to you.
+
+## 🍽 Getting Started
+
+Clone the repo and install the dependencies:
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/timmybytes/main-course.git
+cd main-course
+yarn
+```
+
+To run the development server:
+
+```bash
 yarn dev
 ```
 
@@ -82,6 +124,6 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## License
+## 📄 License
 
 Main Course is offered under an MIT license.
