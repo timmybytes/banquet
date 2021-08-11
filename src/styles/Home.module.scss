@@ -1,8 +1,0 @@
-@use 'theme.scss' as *;
-
-.root {
-  background: $orange-yellow;
-  :first-child {
-    background: $cultured;
-  }
-}
