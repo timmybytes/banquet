@@ -13,6 +13,7 @@ class MyDocument extends Document {
     return { ...initialProps }
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   render() {
     return (
       <Html>

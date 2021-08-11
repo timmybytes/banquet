@@ -8,20 +8,19 @@ body {
 }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
-  background: $cultured;
-  color: $rich-black-fogra-29;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: $silver;
+  color: $dark;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 900;
 }
 
 a {
-  color: $steel-blue;
   text-decoration: none;
   font-weight: 600;
 }
@@ -31,7 +30,7 @@ a {
 }
 
 code {
-  font-family: "Menlo", monospace;
+  font-family: 'Menlo', monospace;
   padding: 1em;
   border-radius: 6px;
 }
