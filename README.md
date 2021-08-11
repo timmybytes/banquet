@@ -1,7 +1,7 @@
 <!-- Header Content -->
 
 <div align="center">
-  <img src="/public/main-course-logo.svg" width="200px" alt="Next Dish Logo" />
+  <img src="/public/Icon-Dark.svg" width="200px" alt="Next Dish Logo" />
   <h1>Main Course</h1>
 </div>
 
