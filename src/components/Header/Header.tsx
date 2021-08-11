@@ -1,48 +1,68 @@
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-  EmailIcon,
-  InfoIcon,
-  StarIcon,
-} from '@chakra-ui/icons'
 import { Box, Button, Flex, Text } from '@chakra-ui/react'
 import { Logo } from '@components/Logo'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import { IoMdCloseCircleOutline } from 'react-icons/io'
+import {
+  IoIceCreamOutline,
+  IoLogoOctocat,
+  IoMenuOutline,
+  IoPizzaOutline,
+  IoRestaurantOutline,
+} from 'react-icons/io5'
 
 const LINKS = [
   {
     href: '/',
-    title: 'Home',
-    icon: <StarIcon />,
+    title: (
+      <>
+        <IoRestaurantOutline size='22px' style={{ display: 'inline' }} /> Home
+      </>
+    ),
   },
   {
     href: '/about',
-    title: 'About',
-    icon: <InfoIcon />,
+    title: (
+      <>
+        <IoIceCreamOutline size='22px' style={{ display: 'inline' }} /> About
+      </>
+    ),
   },
   {
     href: '/examples',
-    title: 'Examples',
-    icon: <EmailIcon />,
+    title: (
+      <>
+        <IoPizzaOutline size='22px' style={{ display: 'inline' }} /> Examples
+      </>
+    ),
   },
   {
     href: 'https://github.com/timmybytes/main-course',
     title: (
-      <Button size='sm' rounded='md' color='brand.gold' background='brand.dark'>
+      <Button
+        size='sm'
+        rounded='md'
+        color='brand.gold'
+        background='brand.dark'
+        fontSize='inherit'
+        _hover={{
+          bg: 'brand.gold',
+          color: 'brand.dark',
+        }}>
+        <IoLogoOctocat
+          size='22px'
+          style={{ display: 'inline', marginRight: '1ch' }}
+        />{' '}
         Fork on GitHub
       </Button>
     ),
-    icon: '',
   },
 ]
 
 const CloseIcon = () => (
-  <ChevronUpIcon color='brand.dark' width='32px' height='32px' />
+  <IoMdCloseCircleOutline color='brand.dark' size='22px' />
 )
-const MenuIcon = () => (
-  <ChevronDownIcon color='brand.dark' width='32px' height='32px' />
-)
+const MenuIcon = () => <IoMenuOutline color='brand.dark' size='22px' />
 
 type NavItemProps = {
   href: string
@@ -56,9 +76,16 @@ const NavItems = ({ href, isLast, children, ...rest }: NavItemProps) => {
       mb={{ base: isLast ? 0 : 8, sm: 0 }}
       mr={{ base: 0, sm: isLast ? 0 : 8 }}
       display='block'
+      cursor='pointer'
       {...rest}>
       <Link href={href}>
-        <a>{children}</a>
+        <Text
+          as='a'
+          _hover={{
+            color: 'brand.gold',
+          }}>
+          {children}
+        </Text>
       </Link>
     </Text>
   )

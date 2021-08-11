@@ -15,7 +15,7 @@ export default function Home(): React.ReactNode {
         <Hero
           title='A Next.js boilerplate to satisfy your development cravings'
           subtitle='Main Course is fast, powerful, and full-flavored with default tools and configurations for building modern websites.'
-          image='https://source.unsplash.com/collection/404339/800x600'
+          image='images/cody-chan-GXhmQt6MFX8-unsplash.jpg'
           ctaLink='https://github.com/timmybytes/main-course'
           ctaLabel='Fork on GitHub'
         />

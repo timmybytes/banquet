@@ -1,46 +1,17 @@
-interface MetaHeadProps {
-  title?: string
-  og?: [
-    {
-      property: string
-      content: string
-    }
-  ]
-}
-
 const HEAD_DATA = {
   title: 'Main Course',
-  description: 'A hearty Next.js boilerplate',
+  description:
+    'Main Course is a boilerplate for Next.js projects with build-in support for TypeScript, SCSS, Jest, Handlebars, Chakra UI, and more.',
+  color: '#e9c46a',
+  repo: 'https://github.com/timmybytes/main-course',
+  url: 'main-course.netlify.app',
+  img: 'main-course-card.png',
 }
 
-/* Example Open Graph meta tags
-
-<meta property="og:site_name" content="Colby Fayock" />
-<meta property=“og:title” content=“Anyone Can Map! Inspiration and an introduction to the world of mapping - Colby Fayock" />
-<meta property="og:description" content="Chef Gusteau was a visionary who created food experiences for the world to enjoy. How can we take his lessons and apply them to the world of…" />
-<meta property="og:url" content="https://www.colbyfayock.com/2020/03/anyone-can-map-inspiration-and-an-introduction-to-the-world-of-mapping/" />
-<meta property="og:type" content="article" />
-<meta property="article:publisher" content="https://www.colbyfayock.com" />
-<meta property="article:section" content="Coding" />
-<meta property="article:tag" content="Coding" />
-<meta property="og:image" content="https://res.cloudinary.com/fay/image/upload/w_1280,h_640,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:232129,g_west,x_80,y_-60,l_text:Source%20Sans%20Pro_70_line_spacing_-10_semibold:Anyone%20Can%20Map!%20Inspiration%20and%20an%20introduction%20to%20the%20world%20of%20mapping/blog-social-card-1.1" />
-<meta property="og:image:secure_url" content="https://res.cloudinary.com/fay/image/upload/w_1280,h_640,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:232129,g_west,x_80,y_-60,l_text:Source%20Sans%20Pro_70_line_spacing_-10_semibold:Anyone%20Can%20Map!%20Inspiration%20and%20an%20introduction%20to%20the%20world%20of%20mapping/blog-social-card-1.1" />
-<meta property="og:image:width" content="1280" />
-<meta property="og:image:height" content="640" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://res.cloudinary.com/fay/image/upload/w_1280,h_640,c_fill,q_auto,f_auto/w_860,c_fit,co_rgb:232129,g_west,x_80,y_-60,l_text:Source%20Sans%20Pro_70_line_spacing_-10_semibold:Anyone%20Can%20Map!%20Inspiration%20and%20an%20introduction%20to%20the%20world%20of%20mapping/blog-social-card-1.1" />
-<meta property="twitter:site" content="@colbyfayock" />
-*/
-
-// Add app-wide meta tags for _document.tsx head
-export const MetaHead = ({ title, og }: MetaHeadProps) => (
+export const MetaHead = (): JSX.Element => (
   <>
-    <meta name='title' content='timmybytes' key='meta-title' />
-    <meta
-      name='description'
-      content='Main Course is a boilerplate for Next.js projects with build-in support for TypeScript, SCSS, Jest, Handlebars, Chakra UI, and more.'
-      key='description'
-    />
+    <meta name='title' content={HEAD_DATA.title} key='meta-title' />
+    <meta name='description' content={HEAD_DATA.description} />
     <link
       rel='apple-touch-icon'
       sizes='180x180'
@@ -64,25 +35,25 @@ export const MetaHead = ({ title, og }: MetaHeadProps) => (
     <link
       rel='mask-icon'
       href='/safari-pinned-tab.svg'
-      color='#5bbad5'
+      color={HEAD_DATA.color}
       key='safari-pinned-tab'
     />
-    <meta name='msapplication-TileColor' content='#da532c' key='ms-tile' />
-    <meta name='theme-color' content='#ff90ad' key='theme-color' />
+    <meta
+      name='msapplication-TileColor'
+      content={HEAD_DATA.color}
+      key='ms-tile'
+    />
+    <meta name='theme-color' content={HEAD_DATA.color} key='theme-color' />
     <meta property='og:locale' content='en_US' key='og-locale' />
     <meta property='og:type' content='website' key='og-type' />
-    <meta property='og:title' content='timmybytes' key='og-title' />
+    <meta property='og:title' content={HEAD_DATA.title} key='og-title' />
     <meta
       property='og:description'
-      content='Main Course is a boilerplate for Next.js projects with build-in support for TypeScript, SCSS, Jest, Handlebars, Chakra UI, and more.'
+      content={HEAD_DATA.description}
       key='og-description'
     />
-    <meta
-      property='og:url'
-      content='https://github.com/timmybytes/main-course'
-      key='og-url'
-    />
-    <meta property='og:image' content='/main-course-card.png' key='og-img' />
+    <meta property='og:url' content={HEAD_DATA.url} key='og-url' />
+    <meta property='og:image' content={HEAD_DATA.img} key='og-img' />
     <meta property='og:image:type' content='image/png' key='og-img-type' />
     <meta property='og:image:alt' content='Main Course logo' key='og-img-alt' />
     <meta property='og:image:width' content='1200' key='og-img-width' />
@@ -92,11 +63,7 @@ export const MetaHead = ({ title, og }: MetaHeadProps) => (
       content='summary_large_image'
       key='twitter-card'
     />
-    <meta
-      property='twitter:image'
-      content='/main-course-card.png'
-      key='twitter-img'
-    />
+    <meta property='twitter:image' content={HEAD_DATA.img} key='twitter-img' />
     <meta
       property='twitter:creator'
       content='@timmybytes'

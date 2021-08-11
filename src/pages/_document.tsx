@@ -1,3 +1,4 @@
+import { MetaHead } from '@components/Meta'
 import Document, {
   DocumentContext,
   Head,
@@ -8,6 +9,7 @@ import Document, {
 import React from 'react'
 
 class MyDocument extends Document {
+  // eslint-disable-next-line
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
@@ -18,7 +20,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel='shortcut icon' href='/avatar.svg'></link>
+          <MetaHead />
         </Head>
         <body>
           <Main />
