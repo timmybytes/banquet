@@ -6,7 +6,7 @@
 </div>
 
 <div align="center">
-  <p>A hearty Next.js boilerplate</p>
+  <p>A gourmet Next.js boilerplate</p>
 </div>
 
 <div align="center">
@@ -19,12 +19,12 @@
 </div>
 
 <p align="center">
-  <sub>🍴 Built with 🍲 by <a href="https://timmybytes.com"target="_blank"rel="noopener noreferrer">Timothy Merritt</a> 🍴</sub>
+  <sub>Built by <a href="https://timmybytes.com"target="_blank"rel="noopener noreferrer">Timothy Merritt</a></sub>
 </p>
 
 <!-- prettier-ignore -->
 <p align="center">
-  ✨ Currently a work-in-progress ✨
+  <✨😙👌✨/>
 </p>
 
 <!-- Main Content -->
