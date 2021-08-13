@@ -16,6 +16,7 @@ type HeroProps = {
   image: string
   ctaLink: string
   ctaLabel: string
+  smallText?: React.ReactNode
   children?: React.ReactNode
 }
 
@@ -25,6 +26,7 @@ export const Hero = ({
   image,
   ctaLink,
   ctaLabel,
+  smallText,
   ...rest
 }: HeroProps): React.ReactElement => {
   return (
@@ -86,20 +88,7 @@ export const Hero = ({
           textAlign='left'
           color='brand.dark'
           opacity='0.6'>
-          Free and open-source under an MIT License. Photo by{' '}
-          <a href='https://unsplash.com/@cceee?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
-            Cody Chan
-          </a>{' '}
-          on{' '}
-          <a href='https://unsplash.com/s/photos/meal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
-            Unsplash
-          </a>
-          .
-          <br />
-          Made with 🧁 by{' '}
-          <Link href='https://timmybytes.com'>
-            <a>Timothy Merritt</a>
-          </Link>
+          {smallText}
         </Text>
       </Stack>
       <Box w={{ base: '100%' }} mb={{ base: 12, md: 0 }}>
