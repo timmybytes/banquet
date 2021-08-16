@@ -1,63 +1,10 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import { Logo } from '@components/Logo'
+import { HEADER_LINKS } from '@components/Meta'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { IoMdCloseCircleOutline } from 'react-icons/io'
-import {
-  IoIceCreamOutline,
-  IoLogoOctocat,
-  IoMenuOutline,
-  IoPizzaOutline,
-  IoRestaurantOutline,
-} from 'react-icons/io5'
-
-const LINKS = [
-  {
-    href: '/',
-    title: (
-      <>
-        <IoRestaurantOutline size='22px' style={{ display: 'inline' }} /> Home
-      </>
-    ),
-  },
-  {
-    href: '/about',
-    title: (
-      <>
-        <IoIceCreamOutline size='22px' style={{ display: 'inline' }} /> About
-      </>
-    ),
-  },
-  {
-    href: '/examples',
-    title: (
-      <>
-        <IoPizzaOutline size='22px' style={{ display: 'inline' }} /> Examples
-      </>
-    ),
-  },
-  {
-    href: 'https://github.com/timmybytes/main-course',
-    title: (
-      <Button
-        size='sm'
-        rounded='md'
-        color='brand.gold'
-        background='brand.dark'
-        fontSize='inherit'
-        _hover={{
-          bg: 'brand.gold',
-          color: 'brand.dark',
-        }}>
-        <IoLogoOctocat
-          size='22px'
-          style={{ display: 'inline', marginRight: '1ch' }}
-        />{' '}
-        Fork on GitHub
-      </Button>
-    ),
-  },
-]
+import { IoMenuOutline } from 'react-icons/io5'
 
 const CloseIcon = () => (
   <IoMdCloseCircleOutline color='brand.dark' size='22px' />
@@ -120,11 +67,11 @@ export const Header = ({ ...rest }): React.ReactElement => {
           justify={['center', 'space-between', 'flex-end', 'flex-end']}
           direction={['column', 'row', 'row', 'row']}
           pt={[4, 4, 0, 0]}>
-          {LINKS.map(({ href, title }, i) => (
+          {HEADER_LINKS.map(({ href, title }, i) => (
             <NavItems
               key={i}
               href={href}
-              {...{ isLast: i === LINKS.length - 1 }}>
+              {...{ isLast: i === HEADER_LINKS.length - 1 }}>
               {title}
             </NavItems>
           ))}

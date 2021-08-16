@@ -11,20 +11,22 @@ import Link from 'next/link'
 import { IoLogoOctocat } from 'react-icons/io5'
 
 type HeroProps = {
-  title: string
-  subtitle: string
+  heading: string
+  subheading: string
   image: string
   ctaLink: string
   ctaLabel: string
+  smallText?: React.ReactNode
   children?: React.ReactNode
 }
 
 export const Hero = ({
-  title,
-  subtitle,
+  heading,
+  subheading,
   image,
   ctaLink,
   ctaLabel,
+  smallText,
   ...rest
 }: HeroProps): React.ReactElement => {
   return (
@@ -47,7 +49,7 @@ export const Hero = ({
           size='xl'
           fontWeight='bold'
           textAlign={['left', 'center', 'left', 'left']}>
-          {title}
+          {heading}
         </Heading>
         <Heading
           as='h2'
@@ -56,7 +58,7 @@ export const Hero = ({
           fontWeight='normal'
           lineHeight={1.5}
           textAlign={['left', 'center', 'left', 'left']}>
-          {subtitle}
+          {subheading}
         </Heading>
         <Link href={ctaLink}>
           <a>
@@ -86,20 +88,7 @@ export const Hero = ({
           textAlign='left'
           color='brand.dark'
           opacity='0.6'>
-          Free and open-source under an MIT License. Photo by{' '}
-          <a href='https://unsplash.com/@cceee?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
-            Cody Chan
-          </a>{' '}
-          on{' '}
-          <a href='https://unsplash.com/s/photos/meal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
-            Unsplash
-          </a>
-          .
-          <br />
-          Made with 🧁 by{' '}
-          <Link href='https://timmybytes.com'>
-            <a>Timothy Merritt</a>
-          </Link>
+          {smallText}
         </Text>
       </Stack>
       <Box w={{ base: '100%' }} mb={{ base: 12, md: 0 }}>

@@ -37,11 +37,12 @@
   - [Plop.js](#bake-new-components-pages-etc-with-plopjs)
   - [Chakra UI](#️chakra-ui)
 - [Getting Started](#getting-started)
+- [Customizing](#customizing)
 - [License](./LICENSE)
 
 ## 🥘 About
 
-🥙 Main Course is an opinionated boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from all of them. Main Course aims to solve this by front-loading more tools and configurations as defaults (without overloading it), with less tinkering required.
+Main Course is an opinionated boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from all of them. Main Course aims to solve this by front-loading more tools and configurations as defaults (without overloading it), with less tinkering required.
 
 It's configured with the following out of the box:
 
@@ -84,6 +85,8 @@ This differs a little from the initial Next.js structure, which doesn't use a `s
 
 Components are also kept in their own directories with related files, and when creating new components and pages with [`yarn bake`](./docs/plop.md), the same structure is followed by default.
 
+Main Course uses a basic custom `Layout` component to wrap all pages that includes a `Header/Nav` and `Footer` component. When creating new pages, you can forgo having to manually add a header/footer, and simply add your desired components. They'll be automatically wrapped with the given layout.
+
 ### 🧁 Plop.js: Bake new components, pages, etc.
 
 Main Course comes with a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [`.hbs`](https://handlebarsjs.com/guide/) templates—or create ones yourself!
@@ -118,11 +121,23 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Customizing
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Update main site data from `src/components/Meta/SiteData` in the `SITE_DATA` object to your own branding/copy:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```tsx
+export const SITE_DATA = {
+  title: 'Main Course',
+  description: 'A gourmet Next.js boilerplate',
+  author: 'Timothy Merritt',
+  authorHandle: '@timmybytes', // For Twitter link cards
+  authorHomepage: 'https://timmybytes.com',
+  color: '#e9c46a',
+  // etc.
+}
+```
+
+This data will populate throughout the site, and can be easily imported into new components/pages with `import {SITE_DATA} from ‘@components/Meta`.
 
 ## 📄 License
 
