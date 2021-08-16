@@ -11,8 +11,8 @@ import Link from 'next/link'
 import { IoLogoOctocat } from 'react-icons/io5'
 
 type HeroProps = {
-  title: string
-  subtitle: string
+  heading: string
+  subheading: string
   image: string
   ctaLink: string
   ctaLabel: string
@@ -21,8 +21,8 @@ type HeroProps = {
 }
 
 export const Hero = ({
-  title,
-  subtitle,
+  heading,
+  subheading,
   image,
   ctaLink,
   ctaLabel,
@@ -49,7 +49,7 @@ export const Hero = ({
           size='xl'
           fontWeight='bold'
           textAlign={['left', 'center', 'left', 'left']}>
-          {title}
+          {heading}
         </Heading>
         <Heading
           as='h2'
@@ -58,7 +58,7 @@ export const Hero = ({
           fontWeight='normal'
           lineHeight={1.5}
           textAlign={['left', 'center', 'left', 'left']}>
-          {subtitle}
+          {subheading}
         </Heading>
         <Link href={ctaLink}>
           <a>
