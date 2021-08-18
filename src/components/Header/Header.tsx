@@ -14,10 +14,21 @@ const MenuIcon = () => <IoMenuOutline color='brand.dark' size='22px' />
 type NavItemProps = {
   href: string
   isLast?: boolean
+  toggle: () => void
   children?: React.ReactNode
 }
 
-const NavItems = ({ href, isLast, children, ...rest }: NavItemProps) => {
+const NavItems = ({
+  href,
+  isLast,
+  toggle,
+  children,
+  ...rest
+}: NavItemProps) => {
+  const handleClick = () => {
+    toggle()
+  }
+
   return (
     <Text
       mb={{ base: isLast ? 0 : 8, sm: 0 }}
@@ -25,9 +36,10 @@ const NavItems = ({ href, isLast, children, ...rest }: NavItemProps) => {
       display='block'
       cursor='pointer'
       {...rest}>
-      <Link href={href}>
+      <Link href={href} passHref>
         <Text
           as='a'
+          onClick={handleClick}
           _hover={{
             color: 'brand.gold',
           }}>
@@ -47,13 +59,21 @@ export const Header = ({ ...rest }): React.ReactElement => {
     <Flex
       as='nav'
       align='center'
+      background='white'
+      zIndex={1}
       justify='space-between'
       wrap='wrap'
       w='100%'
       p={4}
+      position='sticky'
+      top='0'
       {...rest}>
       <Flex align='center'>
-        <Logo w='max-content' />
+        <Link href='/'>
+          <a>
+            <Logo w='max-content' />
+          </a>
+        </Link>
       </Flex>
 
       <Box display={{ base: 'block', md: 'none' }} onClick={toggleMenu}>
@@ -71,6 +91,7 @@ export const Header = ({ ...rest }): React.ReactElement => {
             <NavItems
               key={i}
               href={href}
+              toggle={toggleMenu}
               {...{ isLast: i === HEADER_LINKS.length - 1 }}>
               {title}
             </NavItems>
