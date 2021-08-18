@@ -53,7 +53,11 @@ export const Header = ({ ...rest }): React.ReactElement => {
       p={4}
       {...rest}>
       <Flex align='center'>
-        <Logo w='max-content' />
+        <Link href='/'>
+          <a>
+            <Logo w='max-content' />
+          </a>
+        </Link>
       </Flex>
 
       <Box display={{ base: 'block', md: 'none' }} onClick={toggleMenu}>
