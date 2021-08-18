@@ -25,7 +25,7 @@ const NavItems = ({ href, isLast, children, ...rest }: NavItemProps) => {
       display='block'
       cursor='pointer'
       {...rest}>
-      <Link href={href}>
+      <Link href={href} passHref>
         <Text
           as='a'
           _hover={{
