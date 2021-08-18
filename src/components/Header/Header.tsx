@@ -2,7 +2,7 @@ import { Box, Flex, Text } from '@chakra-ui/react'
 import { Logo } from '@components/Logo'
 import { HEADER_LINKS } from '@components/Meta'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoMdCloseCircleOutline } from 'react-icons/io'
 import { IoMenuOutline } from 'react-icons/io5'
 
@@ -14,10 +14,21 @@ const MenuIcon = () => <IoMenuOutline color='brand.dark' size='22px' />
 type NavItemProps = {
   href: string
   isLast?: boolean
+  toggle: () => void
   children?: React.ReactNode
 }
 
-const NavItems = ({ href, isLast, children, ...rest }: NavItemProps) => {
+const NavItems = ({
+  href,
+  isLast,
+  toggle,
+  children,
+  ...rest
+}: NavItemProps) => {
+  const handleClick = () => {
+    toggle()
+  }
+
   return (
     <Text
       mb={{ base: isLast ? 0 : 8, sm: 0 }}
@@ -28,6 +39,7 @@ const NavItems = ({ href, isLast, children, ...rest }: NavItemProps) => {
       <Link href={href} passHref>
         <Text
           as='a'
+          onClick={handleClick}
           _hover={{
             color: 'brand.gold',
           }}>
@@ -43,14 +55,22 @@ export const Header = ({ ...rest }): React.ReactElement => {
   const [show, setShow] = useState(false)
   const toggleMenu = () => setShow(!show)
 
+  useEffect(() => {
+    setShow(false)
+  }, [])
+
   return (
     <Flex
       as='nav'
       align='center'
+      background='white'
+      zIndex={1}
       justify='space-between'
       wrap='wrap'
       w='100%'
       p={4}
+      position='sticky'
+      top='0'
       {...rest}>
       <Flex align='center'>
         <Link href='/'>
@@ -75,6 +95,7 @@ export const Header = ({ ...rest }): React.ReactElement => {
             <NavItems
               key={i}
               href={href}
+              toggle={toggleMenu}
               {...{ isLast: i === HEADER_LINKS.length - 1 }}>
               {title}
             </NavItems>
