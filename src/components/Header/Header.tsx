@@ -2,7 +2,7 @@ import { Box, Flex, Text } from '@chakra-ui/react'
 import { Logo } from '@components/Logo'
 import { HEADER_LINKS } from '@components/Meta'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { IoMdCloseCircleOutline } from 'react-icons/io'
 import { IoMenuOutline } from 'react-icons/io5'
 
@@ -54,10 +54,6 @@ const NavItems = ({
 export const Header = ({ ...rest }): React.ReactElement => {
   const [show, setShow] = useState(false)
   const toggleMenu = () => setShow(!show)
-
-  useEffect(() => {
-    setShow(false)
-  }, [])
 
   return (
     <Flex
