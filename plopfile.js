@@ -1,7 +1,44 @@
 // Define location of your template files (relative to this file)
 const TEMPLATE_DIR = './templates'
 
-// Define the files that can be generated
+// Define the template files that will be used for each generator
+const PLOP_COMPONENT = {
+  type: 'add',
+  path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
+  templateFile: `${TEMPLATE_DIR}/Component/Component.tsx.hbs`,
+}
+
+const PLOP_COMPONENT_SINGLE = {
+  type: 'add',
+  path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
+  templateFile: `${TEMPLATE_DIR}/Component/ComponentSingle.tsx.hbs`,
+}
+
+const PLOP_COMPONENT_TEST = {
+  type: 'add',
+  path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+  templateFile: `${TEMPLATE_DIR}/Component/Component.test.tsx.hbs`,
+}
+
+const PLOP_COMPONENT_INDEX = {
+  type: 'add',
+  path: 'src/components/{{pascalCase name}}/index.ts',
+  templateFile: `${TEMPLATE_DIR}/Component/index.ts.hbs`,
+}
+
+const PLOP_COMPONENT_SCSS = {
+  type: 'add',
+  path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.module.scss',
+  templateFile: `${TEMPLATE_DIR}/Component/Component.module.scss.hbs`,
+}
+
+const PLOP_PAGE = {
+  type: 'add',
+  path: 'src/pages/{{lowerCase name}}.tsx',
+  templateFile: `${TEMPLATE_DIR}/Page/Page.tsx.hbs`,
+}
+
+// Define the files that can be generated (CLI menu)
 module.exports = plop => {
   plop.setWelcomeMessage('Choose from the menu options below:')
   plop.setGenerator('Component', {
@@ -24,8 +61,12 @@ module.exports = plop => {
             value: 'full',
           },
           {
-            name: 'TSX Component only',
+            name: 'TSX Component with test and index file (no SCSS)',
             value: 'basic',
+          },
+          {
+            name: 'TSX Component only',
+            value: 'single',
           },
         ],
       },
@@ -41,35 +82,20 @@ module.exports = plop => {
 
       if (data.type === 'full') {
         actions.push(
-          {
-            type: 'add',
-            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
-            templateFile: `${TEMPLATE_DIR}/Component/Component.tsx.hbs`,
-          },
-          {
-            type: 'add',
-            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
-            templateFile: `${TEMPLATE_DIR}/Component/Component.test.tsx.hbs`,
-          },
-          {
-            type: 'add',
-            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.module.scss',
-            templateFile: `${TEMPLATE_DIR}/Component/Component.module.scss.hbs`,
-          },
-          {
-            type: 'add',
-            path: 'src/components/{{pascalCase name}}/index.ts',
-            templateFile: `${TEMPLATE_DIR}/Component/index.ts.hbs`,
-          }
+          PLOP_COMPONENT,
+          PLOP_COMPONENT_TEST,
+          PLOP_COMPONENT_INDEX,
+          PLOP_COMPONENT_SCSS
         )
-      } else {
-        actions.push({
-          type: 'add',
-          path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
-          templateFile: `${TEMPLATE_DIR}/Component/Component.tsx.hbs`,
-        })
+      } else if (data.type === 'basic') {
+        actions.push(
+          PLOP_COMPONENT_SINGLE,
+          PLOP_COMPONENT_TEST,
+          PLOP_COMPONENT_INDEX
+        )
+      } else if (data.type === 'single') {
+        actions.push(PLOP_COMPONENT_SINGLE)
       }
-
       return actions
     },
   }),
@@ -87,43 +113,9 @@ module.exports = plop => {
         if (!data.name) {
           data.name = `Component__${Math.random().toString(36).substr(2, 5)}`
         }
-
         var actions = []
-
-        actions.push({
-          type: 'add',
-          path: 'src/pages/{{lowerCase name}}.tsx',
-          templateFile: `${TEMPLATE_DIR}/Page/Page.tsx.hbs`,
-        })
-
+        actions.push(PLOP_PAGE)
         return actions
       },
     })
-
-  // Create further generators in the same way, ex:
-  // plop.setGenerator('Layout', {
-  //   description: 'Create a new layout',
-  //   prompts: [
-  //     {
-  //       type: 'input',
-  //       name: 'name',
-  //       message: 'Enter a name for the layout',
-  //     },
-  //   ],
-  //   actions: function (data) {
-  //     if (!data.name) {
-  //       data.name = 'Layout'
-  //     }
-
-  //     var actions = []
-
-  //     actions.push({
-  //       type: 'add',
-  //       path: 'src/layouts/{{lowerCase name}}.tsx',
-  //       templateFile: 'templates/Layout/Layout.tsx.hbs',
-  //     })
-
-  //     return actions
-  //   }
-  // })
 }

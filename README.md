@@ -32,7 +32,6 @@
 ## 🍛 Contents
 
 - [About](#about)
-- [Features](#features)
   - [Structure](#structure)
   - [Plop.js](#bake-new-components-pages-etc-with-plopjs)
   - [Chakra UI](#️chakra-ui)
@@ -42,7 +41,7 @@
 
 ## 🥘 About
 
-Main Course is an opinionated boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from all of them. Main Course aims to solve this by front-loading more tools and configurations as defaults (without overloading it), with less tinkering required.
+Main Course is an opinionated boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from most of them. Main Course aims to solve this by front-loading more tools and configurations as defaults with less tinkering required.
 
 It's configured with the following out of the box:
 
@@ -51,10 +50,6 @@ It's configured with the following out of the box:
 - [Jest](https://github.com/facebook/jest) + [React Testing Library](https://github.com/testing-library/react-testing-library)
 - [Chakra UI](https://chakra-ui.com/)
 - [Plop.js](https://github.com/plopjs/plop) code generator
-
-## 🍡 Features
-
-Main Course is bootstrapped from `create-next-app` with support for TypeScript, (S)CSS Modules, Jest testing, Plop code generation, and Chakra UI.
 
 ### 🍱 Structure
 
@@ -85,11 +80,11 @@ This differs a little from the initial Next.js structure, which doesn't use a `s
 
 Components are also kept in their own directories with related files, and when creating new components and pages with [`yarn bake`](./docs/plop.md), the same structure is followed by default.
 
-Main Course uses a basic custom `Layout` component to wrap all pages that includes a `Header/Nav` and `Footer` component. When creating new pages, you can forgo having to manually add a header/footer, and simply add your desired components. They'll be automatically wrapped with the given layout.
+Main Course uses a basic custom `Layout` component to wrap all pages that includes a `Header/Nav` and `Footer` component. When creating new pages, you can forgo having to manually add a header/footer, and simply add your desired content components. They'll be automatically wrapped with the given layout.
 
 ### 🧁 Plop.js: Bake new components, pages, etc.
 
-Main Course comes with a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [`.hbs`](https://handlebarsjs.com/guide/) templates—or create ones yourself!
+Main Course comes with a `bake` command to invoke a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [`.hbs`](https://handlebarsjs.com/guide/) templates—or create ones yourself!
 
 The included templates can generate:
 
@@ -139,6 +134,10 @@ export const SITE_DATA = {
 
 This data will populate throughout the site, and can be easily imported into new components/pages with `import {SITE_DATA} from ‘@components/Meta`.
 
+## Contributing
+
+Main Course hasn't been fully released yet, and is not currently looking for contributors.
+
 ## 📄 License
 
-Main Course is offered under an MIT license.
+Main Course is offered under an [MIT license](./LICENSE.md).
