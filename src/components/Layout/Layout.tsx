@@ -1,6 +1,7 @@
-import { Flex } from '@chakra-ui/react'
-import { Footer } from '@components/Footer'
-import { Header } from '@components/Header'
+import { Footer } from '@components/Layout/Footer'
+import { Header } from '@components/Layout/Header'
+import { Main } from '@components/Layout/Main'
+import { LayoutWrapper } from './LayoutWrapper'
 
 type LayoutProps = {
   children?: React.ReactNode
@@ -8,10 +9,10 @@ type LayoutProps = {
 
 export const Layout = ({ children }: LayoutProps): React.ReactElement => {
   return (
-    <Flex direction='column' align='center' maxW={{ xl: '1200px' }} m='0 auto'>
+    <LayoutWrapper>
       <Header />
-      {children}
+      <Main>{children}</Main>
       <Footer />
-    </Flex>
+    </LayoutWrapper>
   )
 }
