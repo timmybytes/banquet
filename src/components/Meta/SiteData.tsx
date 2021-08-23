@@ -95,7 +95,7 @@ export const HEADER_LINKS = [
 //
 export const FOOTER_DATA = (
   <>
-    Made with 🧁{' '}
+    Made with 🧁 by{' '}
     {SITE_DATA.authorHomepage && SITE_DATA.author && (
       <>
         <Link href={SITE_DATA.authorHomepage}>

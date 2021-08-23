@@ -16,7 +16,16 @@ export default function Home(): React.ReactNode {
         smallText={SITE_DATA.hero.smallText}
       />
       <Section>
-        <Heading>About</Heading>
+        <Heading>
+          About{' '}
+          <Text
+            as='span'
+            fontStyle='italic'
+            fontFamily='Playfair Display'
+            fontWeight='900'>
+            Main Course
+          </Text>
+        </Heading>
         <Box
           as='ul'
           d='flex'
