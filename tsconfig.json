@@ -12,6 +12,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "noEmit": true,
+    "noImplicitAny": false,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
