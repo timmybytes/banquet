@@ -1,4 +1,5 @@
-import { Box, Button, Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
+import { CTAButton } from '@components/CTAButton'
 import { Hero } from '@components/Hero'
 import { Section } from '@components/Layout/Section'
 import { SITE_DATA } from '@components/Meta'
@@ -180,14 +181,15 @@ export default function Home(): React.ReactNode {
             fontWeight='900'>
             Start building with
             <br />
-            Main Course today
+            Main Course
+            <br /> today
           </Text>
-          <Button
+          <CTAButton
+            link={SITE_DATA.repo}
+            label='View on GitHub'
             color='brand.dark'
-            bg='brand.gold'
-            _hover={{ color: 'brand.gold', bg: 'brand.dark' }}>
-            View on GitHub
-          </Button>
+            bgColor='brand.gold'
+          />
         </Box>
       </Section>
     </>
