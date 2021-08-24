@@ -1,14 +1,5 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Image,
-  Stack,
-  Text,
-} from '@chakra-ui/react'
-import Link from 'next/link'
-import { IoLogoOctocat } from 'react-icons/io5'
+import { Box, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react'
+import { CTAButton } from '@components/CTAButton'
 
 type HeroProps = {
   heading: string
@@ -35,7 +26,7 @@ export const Hero = ({
       justify={{ base: 'center', md: 'space-around', xl: 'space-between' }}
       direction={{ base: 'column-reverse', md: 'row' }}
       wrap='nowrap'
-      minH='70vh'
+      minH='50vh'
       px={8}
       mb={16}
       {...rest}>
@@ -60,28 +51,12 @@ export const Hero = ({
           textAlign={['left', 'center', 'left', 'left']}>
           {subheading}
         </Heading>
-        <Link href={ctaLink}>
-          <a>
-            <Button
-              backgroundColor='brand.dark'
-              color='brand.gold'
-              borderRadius='8px'
-              py='4'
-              px='4'
-              lineHeight='1'
-              size='md'
-              _hover={{
-                bg: 'brand.gold',
-                color: 'brand.dark',
-              }}>
-              <IoLogoOctocat
-                size='22px'
-                style={{ display: 'inline', marginRight: '1ch' }}
-              />{' '}
-              {ctaLabel}
-            </Button>
-          </a>
-        </Link>
+        <CTAButton
+          link={ctaLink}
+          label={ctaLabel}
+          color='brand.gold'
+          bgColor='brand.dark'
+        />
         <Text
           fontSize='xs'
           mt={2}
