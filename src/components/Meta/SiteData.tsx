@@ -4,7 +4,6 @@ import React from 'react'
 import {
   IoIceCreamOutline,
   IoLogoOctocat,
-  IoPizzaOutline,
   IoRestaurantOutline,
 } from 'react-icons/io5'
 
@@ -46,7 +45,7 @@ export const SITE_DATA = {
 // Links for Header component with Ionicon icons
 export const HEADER_LINKS = [
   {
-    href: '/',
+    href: '#',
     title: (
       <>
         <IoRestaurantOutline size='22px' style={{ display: 'inline' }} /> Home
@@ -54,18 +53,10 @@ export const HEADER_LINKS = [
     ),
   },
   {
-    href: '/about',
+    href: '#features',
     title: (
       <>
-        <IoIceCreamOutline size='22px' style={{ display: 'inline' }} /> About
-      </>
-    ),
-  },
-  {
-    href: '/examples',
-    title: (
-      <>
-        <IoPizzaOutline size='22px' style={{ display: 'inline' }} /> Examples
+        <IoIceCreamOutline size='22px' style={{ display: 'inline' }} /> Features
       </>
     ),
   },
