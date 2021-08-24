@@ -6,7 +6,7 @@
 </div>
 
 <div align="center">
-  <p>A gourmet Next.js boilerplate</p>
+  <p>A gourmet Next.js starter + boilerplate</p>
 </div>
 
 <div align="center">
@@ -35,21 +35,23 @@
   - [Structure](#structure)
   - [Plop.js](#bake-new-components-pages-etc-with-plopjs)
   - [Chakra UI](#️chakra-ui)
+  - [Other Features](#other-features)
 - [Getting Started](#getting-started)
 - [Customizing](#customizing)
 - [License](./LICENSE)
 
 ## 🥘 About
 
-Main Course is an opinionated boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from most of them. Main Course aims to solve this by front-loading more tools and configurations as defaults with less tinkering required.
+Main Course is an opinionated starter + boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from most of them. Main Course aims to solve this by front-loading more tools and configurations as defaults with less tinkering required.
 
 It's configured with the following out of the box:
 
-- [Next.js](https//nextjs.org) + [TypeScript](https://www.typescriptlang.org/)
-- Support for [CSS Modules](https://github.com/css-modules/css-modules) with SCSS/SASS
-- [Jest](https://github.com/facebook/jest) + [React Testing Library](https://github.com/testing-library/react-testing-library)
-- [Chakra UI](https://chakra-ui.com/)
-- [Plop.js](https://github.com/plopjs/plop) code generator
+- Modern React: [Next.js](https//nextjs.org) + [TypeScript](https://www.typescriptlang.org/)
+- Flexible styling: Support for [CSS Modules](https://github.com/css-modules/css-modules) with SCSS/SASS
+- Testing defaults: [Jest](https://github.com/facebook/jest) + [React Testing Library](https://github.com/testing-library/react-testing-library)
+- Robust UI: [Chakra UI](https://chakra-ui.com/) + [React Icons](https://github.com/react-icons/react-icons) included
+- Customizable templating: [Plop.js](https://github.com/plopjs/plop) code generator
+- CI/CD: Pre-commit and pre-push hooks with [Husky](https://github.com/typicode/husky) and [`lint-staged`](https://github.com/okonet/lint-staged)
 
 ### 🍱 Structure
 
@@ -63,6 +65,7 @@ src/
   assets/
   components/
     SomeComponent/
+      SubComponent/
       SomeComponent.tsx
       SomeComponent.test.tsx
       SomeComponent.module.scss
@@ -71,16 +74,16 @@ src/
     _app.tsx
     index.tsx
   styles/
-    _theme.scss
+    _globals.scss
   utils/
   ...
 ```
 
 This differs a little from the initial Next.js structure, which doesn't use a `src` directory by default, but is still [fully compatible with all of Next's features](https://nextjs.org/docs/advanced-features/src-directory).
 
-Components are also kept in their own directories with related files, and when creating new components and pages with [`yarn bake`](./docs/plop.md), the same structure is followed by default.
+Components are kept in their own directories with related files and a root `index.ts` for easy imports/exports, and when creating new components and pages with [`yarn bake`](./docs/plop.md), the same structure is followed by default.
 
-Main Course uses a basic custom `Layout` component to wrap all pages that includes a `Header/Nav` and `Footer` component. When creating new pages, you can forgo having to manually add a header/footer, and simply add your desired content components. They'll be automatically wrapped with the given layout.
+Main Course also uses a basic custom `Layout` component to wrap all pages, and includes a `Header/Nav` and `Footer` component. When creating new pages, you can forgo having to manually add a header/footer, and simply add your desired page content; it will be automatically wrapped with the given layout.
 
 ### 🧁 Plop.js: Bake new components, pages, etc.
 
@@ -92,13 +95,51 @@ The included templates can generate:
 - _Only_ a `.tsx` component inside its own directory in `src/components`
 - A new page inside `src/pages`
 
-To use it, run `yarn bake` from the terminal, and choose from the options available, or [read more about using Plop in Main Course](docs/plop.md).
+To use it, run `yarn bake` from the terminal, and choose from the options available, or [read more about using Plop in Main Course](docs/plop.md) and make your own custom templates.
 
-### ⚡️ Chakra UI
+### ⚡️ Chakra UI + React Icons
 
-Main Course also includes [Chakra UI](https://chakra-ui.com/) as a dependency. Main Course uses Chakra because of its flexibility, ease of use, and accessibility. You can use it as a basis for a project theme, customize the Chakra components, or delete it altogether if it isn't useful to you.
+Main Course also includes [Chakra UI](https://chakra-ui.com/) and [React Icons](https://github.com/react-icons/react-icons) for flexible, accessible, and easy to use UI components and hooks. And with Chakra’s theme provider, it’s easy to define default colors, sizes, fonts, etc., and access them from anywhere in your project.
+
+### Other Features
+
+#### Path Aliasing
+
+Main Course comes pre-configured with path aliasing for simplified imports during development. From `tsconfig.json`, you can customize or add to the predefined paths:
+
+```json
+"@components/*": ["src/components/*"],
+"@pages/*": ["src/pages/*"],
+"@hooks/*": ["hooks/*"],
+"@public/*": ["public/*"],
+"@test/*": ["test/*"],
+"@styles/*": ["src/styles/*"],
+"@utils/*": ["src/utils/*"],
+"@/*": ["src/*"]
+```
+
+When importing components, hooks, etc., use the aliases to avoid having to resolve full paths. For example:
+
+```tsx
+// ExampleComponent.tsx
+
+import { SignInPopup } from ‘@components/SignInPopup’;
+
+export const SignInWrapper = () => ( <SignInPopup /> );
+
+```
+
+#### CI Checks With Husky
+
+Main Course also comes with pre-commit and pre-push hooks ready to use via Husky and `lint-staged`. These are checks and commands run against staged code when you’re committing and pushing changes, respectively.
+
+Current defaults include linting with ESLint, formatting with Prettier, and type checking with `tsc`.
 
 ## 🍽 Getting Started
+
+Currently Main Course is still a work in progress, so you’ll need to fork and clone the repo to use it. But coming soon, Main Course will be released as an `npm` package for easy project setup.
+
+### Local Development
 
 Clone the repo and install the dependencies:
 
@@ -118,7 +159,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Customizing
 
-Update main site data from `src/components/Meta/SiteData` in the `SITE_DATA` object to your own branding/copy:
+Update site-wide variables and data from `src/components/Meta/SiteData`. Here’s the `SITE_DATA` object, where you can add your own branding/copy for things like link-sharing previews and meta tags:
 
 ```tsx
 export const SITE_DATA = {
