@@ -1,4 +1,6 @@
+import { ColorModeScript } from '@chakra-ui/react'
 import { MetaHead } from '@components/Meta'
+import { theme } from '@theme/index'
 import Document, {
   DocumentContext,
   Head,
@@ -23,6 +25,7 @@ class MyDocument extends Document {
           <MetaHead />
         </Head>
         <body>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>

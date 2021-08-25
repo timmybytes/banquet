@@ -13,14 +13,14 @@ export const Article = ({
   ...rest
 }: ArticleProps): React.ReactElement => {
   return (
-    <Box p={{ base: '0', md: '2rem' }} {...rest}>
+    <Box p={{ base: '0', md: '1rem' }} {...rest}>
       <Text
         as='h3'
         my='1rem'
         fontFamily='heading'
-        fontSize='2rem'
+        fontSize={{ base: '1.75rem', md: '2rem' }}
         maxW='30ch'
-        fontWeight='900'>
+        fontWeight='700'>
         {heading}
       </Text>
       <Text m='1rem 0' maxW='65ch' fontSize='lg' opacity='0.8' lineHeight={1.5}>

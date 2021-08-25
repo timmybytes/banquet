@@ -1,11 +1,7 @@
-import { Button } from '@chakra-ui/react'
+import { CTAButton } from '@components/CTAButton'
 import Link from 'next/link'
 import React from 'react'
-import {
-  IoIceCreamOutline,
-  IoLogoOctocat,
-  IoRestaurantOutline,
-} from 'react-icons/io5'
+import { IoIceCreamOutline, IoRestaurantOutline } from 'react-icons/io5'
 
 // Info for HTML <head/> tags, Hero component, and Open Graph link sharing
 export const SITE_DATA = {
@@ -20,9 +16,9 @@ export const SITE_DATA = {
   img: 'banquet-card.png',
   logo: 'Icon-Dark.svg',
   hero: {
-    heading: 'A Next.js boilerplate to satisfy your development cravings',
+    heading: 'A Next.js starter to satisfy your development cravings',
     subheading:
-      'Banquet is fast, powerful, and full-flavored with default tools and configurations for building modern websites',
+      'Banquet is configured for an excellent developer experience, and includes a feast of tooling and presets for building on the modern web.',
     image: 'images/cody-chan-GXhmQt6MFX8-unsplash.jpg',
     ctaLink: 'https://github.com/timmybytes/banquet',
     ctaLabel: 'Fork on GitHub',
@@ -63,22 +59,12 @@ export const HEADER_LINKS = [
   {
     href: 'https://github.com/timmybytes/banquet',
     title: (
-      <Button
-        size='sm'
-        rounded='md'
-        color='brand.gold'
-        background='brand.dark'
-        fontSize='inherit'
-        _hover={{
-          bg: 'brand.gold',
-          color: 'brand.dark',
-        }}>
-        <IoLogoOctocat
-          size='22px'
-          style={{ display: 'inline', marginRight: '1ch' }}
-        />{' '}
-        Fork on GitHub
-      </Button>
+      <CTAButton
+        link={'https://github.com/timmybytes/banquet'}
+        label='View on GitHub'
+        color='brand.dark'
+        bgColor='brand.gold'
+      />
     ),
   },
 ]
