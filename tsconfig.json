@@ -24,6 +24,7 @@
       "@public/*": ["public/*"],
       "@test/*": ["test/*"],
       "@styles/*": ["src/styles/*"],
+      "@theme/*": ["src/theme/*"],
       "@utils/*": ["src/utils/*"],
       "@/*": ["src/*"]
     }
