@@ -42,15 +42,15 @@ export const Hero = ({
           textAlign={['left', 'center', 'left', 'left']}>
           {heading}
         </Heading>
-        <Heading
+        <Text
           as='h2'
-          size='md'
+          fontSize='lg'
           opacity='0.8'
           fontWeight='normal'
           lineHeight={1.5}
           textAlign={['left', 'center', 'left', 'left']}>
           {subheading}
-        </Heading>
+        </Text>
         <CTAButton
           link={ctaLink}
           label={ctaLabel}

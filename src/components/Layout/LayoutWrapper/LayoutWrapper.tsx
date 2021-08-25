@@ -12,7 +12,6 @@ export const LayoutWrapper = ({
     <Flex
       direction='column'
       align='center'
-      maxW={{ xl: '1200px' }}
       m='0 auto'
       minH='100vh'
       height='98%'

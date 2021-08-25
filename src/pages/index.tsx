@@ -1,6 +1,7 @@
 import { Box, Text } from '@chakra-ui/react'
 import { CTAButton } from '@components/CTAButton'
 import { Hero } from '@components/Hero'
+import { Article } from '@components/Layout/Article'
 import { Section } from '@components/Layout/Section'
 import { SITE_DATA } from '@components/Meta'
 import React from 'react'
@@ -25,21 +26,28 @@ export default function Home(): React.ReactNode {
         alignItems='center'
         w='100%'
         id='features'>
-        <Box p={{ base: '0', md: '2rem' }}>
+        <Box
+          p={{ base: '0', md: '2rem' }}
+          w='100%'
+          d='flex'
+          flexDirection='column'
+          alignItems='center'
+          justifyContent='center'>
           <Text
             as='h2'
             my='1rem'
+            fontFamily='heading'
             fontSize='2.5rem'
             maxW='30ch'
-            fontWeight='900'
-            textAlign='center'>
+            fontWeight='900'>
             Features
           </Text>
           <hr />
           <Text
+            alignSelf='center'
             m='1rem 0'
-            maxW='65ch'
-            fontSize='xl'
+            maxW='85ch'
+            fontSize='lg'
             opacity='0.8'
             fontWeight='normal'
             lineHeight={1.5}>
@@ -49,69 +57,32 @@ export default function Home(): React.ReactNode {
             required.
           </Text>
         </Box>
-        <Box p={{ base: '0', md: '2rem' }}>
-          <Text as='h3' my='1rem' fontSize='2rem' maxW='30ch' fontWeight='900'>
-            Configured for modern React development with Typescript + Next.js
-          </Text>
-          <Text
-            m='1rem 0'
-            maxW='65ch'
-            fontSize='xl'
-            opacity='0.8'
-            fontWeight='normal'
-            lineHeight={1.5}>
-            Main Course is built with Next.js to deliver fast performance,
-            variable routing, static and/or server rendering, and more. All
-            pages and components are written in Typescript, allowing for a more
-            robust development experience.
-          </Text>
-        </Box>
-        <Box p={{ base: '0', md: '2rem' }}>
-          <Text as='h3' my='1rem' fontSize='2rem' maxW='30ch' fontWeight='900'>
-            Support for CSS Modules + SASS
-          </Text>
-          <Text
-            m='1rem 0'
-            maxW='65ch'
-            fontSize='xl'
-            opacity='0.8'
-            fontWeight='normal'
-            lineHeight={1.5}>
-            Main Course supports both default SCSS/SASS and S/CSS modules, with
-            no compiling or configuration needed. Use Chakra UI's inline styling
-            shortcuts, create isolated CSS modules, or store and link your
-            styles separately, all without any extra work.
-          </Text>
-        </Box>
-        <Box p={{ base: '0', md: '2rem' }}>
-          <Text as='h3' my='1rem' fontSize='2rem' maxW='30ch' fontWeight='900'>
-            Jest + React Testing Library preconfigured
-          </Text>
-          <Text
-            m='1rem 0'
-            maxW='65ch'
-            fontSize='xl'
-            opacity='0.8'
-            fontWeight='normal'
-            lineHeight={1.5}>
+        <Box
+          display='grid'
+          gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}>
+          <Article
+            heading='Modern DX with Typescript + Next.js'
+            body='Main Course is built with Next.js to deliver fast performance,
+              variable routing, static and/or server rendering, and more. All
+              pages and components are written in Typescript, allowing for a
+              more robust development experience.
+            '
+          />
+          <Article
+            heading='CSS Modules + SASS Support'
+            body="Main Course supports both default SCSS/SASS and S/CSS modules,
+              with no compiling or configuration needed. Use Chakra UI's inline
+              styling shortcuts, create isolated CSS modules, or store and link
+              your styles separately, all without any extra work."
+          />
+          <Article heading='Preconfigured Jest + React Testing Library'>
             Main Course is preconfigured with Jest and React Testing Library to
             allow for fast and isolated unit testing, and combines with Husky
             and <code>lint-staged</code> to ensure all tests pass on every
             commit. And when creating new components and pages with Plop (see
             below), Main Course will automatically generate a test file for you.
-          </Text>
-        </Box>
-        <Box p={{ base: '0', md: '2rem' }}>
-          <Text as='h3' my='1rem' fontSize='2rem' maxW='30ch' fontWeight='900'>
-            Chakra UI & React Icons
-          </Text>
-          <Text
-            m='1rem 0'
-            maxW='65ch'
-            fontSize='xl'
-            opacity='0.8'
-            fontWeight='normal'
-            lineHeight={1.5}>
+          </Article>
+          <Article heading='Chakra UI & React Icons'>
             Main Course also includes{' '}
             <a href='https://chakra-ui.com'>Chakra UI</a> and{' '}
             <a href='https://github.com/react-icons/react-icons'>React Icons</a>{' '}
@@ -119,45 +90,27 @@ export default function Home(): React.ReactNode {
             And with Chakra’s theme provider, it’s easy to define default
             colors, sizes, fonts, etc., and access them from anywhere in your
             project.
-          </Text>
-        </Box>
-        <Box p={{ base: '0', md: '2rem' }}>
-          <Text as='h3' my='1rem' fontSize='2rem' maxW='30ch' fontWeight='900'>
-            Plop.js Templates + Code Generator
-          </Text>
-          <Text
-            m='1rem 0'
-            maxW='65ch'
-            fontSize='xl'
-            opacity='0.8'
-            fontWeight='normal'
-            lineHeight={1.5}>
-            Main Course comes with a `bake` command to invoke a CLI code
-            generator called <a href='https://plopjs.com'>Plop</a>. You can use
-            it to add new components, tests, pages, etc., based on the included{' '}
+          </Article>
+          <Article heading='Plop.js Templates + Code Generator'>
+            Main Course comes with a <code>bake</code> command to invoke a CLI
+            code generator called <a href='https://plopjs.com'>Plop</a>. You can
+            use it to add new components, tests, pages, etc., based on the
+            included{' '}
             <a href='https://handlebarsjs.com/guide/'>
               <code>.hbs</code>
             </a>
             templates—or create ones yourself!
-          </Text>
-        </Box>
-        <Box p={{ base: '0', md: '2rem' }}>
-          <Text as='h3' my='1rem' fontSize='2rem' maxW='30ch' fontWeight='900'>
-            Continuous Integration with Husky
-          </Text>
-          <Text
-            m='1rem 0'
-            maxW='65ch'
-            fontSize='xl'
-            opacity='0.8'
-            fontWeight='normal'
-            lineHeight={1.5}>
-            Main course includes git hooks through Husky to ensure all tests
-            pass and all code is linted and formatted before you make a commit.
-            Type checking is then performed before any commit is pushed. These
-            options are more are easily customizable and can be adjusted to your
-            own needs.
-          </Text>
+          </Article>
+          <Article heading='Linting, Formatting, and Type-Checking with Husky'>
+            Main course includes git hooks through{' '}
+            <a href='https://github.com/typicode/husky'>Husky</a> to ensure all
+            tests pass and all code is linted (with{' '}
+            <a href='https://eslint.org/'>ESLint</a>) and formatted (with{' '}
+            <a href='https://prettier.io/'>Prettier</a>) before you make a
+            commit. Type checking is then performed before any commit is pushed.
+            These options are more are easily customizable and can be adjusted
+            to your own needs.
+          </Article>
         </Box>
       </Section>
       <Section
@@ -174,14 +127,15 @@ export default function Home(): React.ReactNode {
           maxW='45ch'
           textAlign='center'
           sx={{ gap: '1rem' }}>
-          <Text
-            fontSize='2rem'
-            fontFamily='Playfair Display'
-            fontStyle='italic'
-            fontWeight='900'>
+          <Text fontSize='2rem' fontFamily='heading'>
             Start building with
             <br />
-            Main Course
+            <Text
+              as='span'
+              color='brand.gold'
+              textShadow='.25px .25px 0 #3c3c3c'>
+              {SITE_DATA.title}
+            </Text>
             <br /> today
           </Text>
           <CTAButton
