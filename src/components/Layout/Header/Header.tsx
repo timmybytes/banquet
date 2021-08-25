@@ -1,4 +1,5 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Text, useColorMode } from '@chakra-ui/react'
+import { DarkModeButton } from '@components/DarkModeButton'
 import { Logo } from '@components/Logo'
 import { HEADER_LINKS } from '@components/Meta'
 import Link from 'next/link'
@@ -28,24 +29,30 @@ const NavItems = ({
   const handleClick = () => {
     toggle()
   }
-
+  const { colorMode } = useColorMode()
   return (
     <Text
       mb={{ base: isLast ? 0 : 8, sm: 0 }}
       mr={{ base: 0, sm: isLast ? 0 : 8 }}
       display='block'
       cursor='pointer'
+      fontSize={{ md: '1.25rem', base: '1.15rem' }}
       {...rest}>
-      <Link href={href} passHref>
-        <Text
-          as='a'
-          onClick={handleClick}
-          _hover={{
-            color: 'brand.gold',
-          }}>
-          {children}
-        </Text>
-      </Link>
+      {!isLast && (
+        <Link href={href} passHref>
+          <Text
+            as='a'
+            onClick={handleClick}
+            color={colorMode === 'light' ? 'brand.dark' : 'brand.silver'}
+            _hover={{
+              color: 'brand.gold',
+            }}>
+            {children}
+          </Text>
+        </Link>
+      )}
+      {/* Removes redundant link for CTA button */}
+      {isLast && <Text>{children}</Text>}
     </Text>
   )
 }
@@ -54,12 +61,12 @@ const NavItems = ({
 export const Header = ({ ...rest }): React.ReactElement => {
   const [show, setShow] = useState(false)
   const toggleMenu = () => setShow(!show)
-
+  const { colorMode } = useColorMode()
   return (
     <Flex
       as='nav'
+      bg={colorMode === 'light' ? 'white' : 'gray.800'}
       align='center'
-      background='white'
       zIndex={1}
       justify='space-between'
       wrap='wrap'
@@ -76,6 +83,7 @@ export const Header = ({ ...rest }): React.ReactElement => {
         </Link>
       </Flex>
 
+      <DarkModeButton />
       <Box display={{ base: 'block', md: 'none' }} onClick={toggleMenu}>
         {show ? <CloseIcon /> : <MenuIcon />}
       </Box>

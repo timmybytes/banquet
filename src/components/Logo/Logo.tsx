@@ -1,4 +1,4 @@
-import { Box, Image, Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 import { SITE_DATA } from '@components/Meta'
 
 export const Logo = ({ ...rest }): React.ReactElement => (
@@ -8,11 +8,11 @@ export const Logo = ({ ...rest }): React.ReactElement => (
     justifyContent='center'
     p={{ lg: '1rem', sm: '0' }}
     {...rest}>
-    <Image src={SITE_DATA.logo} width='48px' height='48px' />
+    {/* <Image src={SITE_DATA.logo} width='48px' height='48px' /> */}
     <Text
       as='h1'
       color='brand.gold'
-      fontWeight='900'
+      fontWeight='400'
       fontFamily='heading'
       textShadow='.25px .25px 0 #3c3c3c'
       textTransform='uppercase'

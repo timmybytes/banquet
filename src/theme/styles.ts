@@ -5,16 +5,15 @@ export const styles = {
     fontFamily:
       'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif',
     a: {
-      color: 'brand.purple',
+      color: 'cyan.600',
       transition: '.3s',
       _hover: {
-        color: 'cyan.400',
+        color: 'cyan.800',
       },
     },
     code: {
       fontFamily: 'Menlo, monospace',
       fontSize: '1rem',
-      fontWeight: 'bold',
       background: 'gray.900',
       color: 'brand.gold',
       borderRadius: '4px',

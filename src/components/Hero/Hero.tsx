@@ -29,16 +29,16 @@ export const Hero = ({
       minH='50vh'
       px={8}
       mb={16}
+      mt={{ base: '3rem', md: '0' }}
       {...rest}>
       <Stack
         spacing={6}
-        w={{ base: '80%', md: '60%' }}
         align={['start', 'center', 'flex-start', 'flex-start']}
-        m='1rem'>
+        p={{ base: '0', md: '2rem' }}>
         <Heading
           as='h1'
-          size='xl'
-          fontWeight='bold'
+          fontSize={{ base: '2rem', md: '3rem' }}
+          fontWeight='700'
           textAlign={['left', 'center', 'left', 'left']}>
           {heading}
         </Heading>
@@ -57,16 +57,11 @@ export const Hero = ({
           color='brand.gold'
           bgColor='brand.dark'
         />
-        <Text
-          fontSize='xs'
-          mt={2}
-          textAlign='left'
-          color='brand.dark'
-          opacity='0.6'>
+        <Text fontSize='xs' mt={2} textAlign='left' opacity='0.6'>
           {smallText}
         </Text>
       </Stack>
-      <Box w={{ base: '100%' }} mb={{ base: 12, md: 0 }}>
+      <Box d={{ base: 'none', md: 'block' }} w={{ base: '100%' }} p={8}>
         <Image src={image} size='100%' rounded='1rem' shadow='2xl' />
       </Box>
     </Flex>

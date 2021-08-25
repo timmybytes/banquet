@@ -6,7 +6,7 @@ type MainProps = {
 
 export const Main = ({ children, ...rest }: MainProps): React.ReactElement => {
   return (
-    <Box as='main' mt='5' mx='auto' {...rest}>
+    <Box as='main' mt='5' mx='auto' maxW='1500px' {...rest}>
       {children}
     </Box>
   )

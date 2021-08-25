@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Grid, Text } from '@chakra-ui/react'
 import { CTAButton } from '@components/CTAButton'
 import { Hero } from '@components/Hero'
 import { Article } from '@components/Layout/Article'
@@ -37,29 +37,20 @@ export default function Home(): React.ReactNode {
             as='h2'
             my='1rem'
             fontFamily='heading'
-            fontSize='2.5rem'
+            fontSize={{ base: '2rem', md: '3rem' }}
             maxW='30ch'
-            fontWeight='900'>
+            fontWeight='200'
+            textTransform='uppercase'
+            color='brand.gold'
+            textShadow='.25px .25px 0 #3c3c3c'>
             Features
           </Text>
-          <hr />
-          <Text
-            alignSelf='center'
-            m='1rem 0'
-            maxW='85ch'
-            fontSize='lg'
-            opacity='0.8'
-            fontWeight='normal'
-            lineHeight={1.5}>
-            Banquet is an opinionated starter and boilerplate for creating{' '}
-            <a href='https://nextjs.org'>Next.js</a> projects, front-loading
-            useful tools and configurations as defaults with minimal tinkering
-            required.
-          </Text>
         </Box>
-        <Box
+        <Grid
           display='grid'
-          gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}>
+          gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}
+          justifyContent='center'
+          alignItems='start'>
           <Article
             heading='Modern DX with Typescript + Next.js'
             body='Banquet is built with Next.js to deliver fast performance,
@@ -68,6 +59,15 @@ export default function Home(): React.ReactNode {
               more robust development experience.
             '
           />
+          <Article heading='Chakra UI & React Icons'>
+            Banquet also includes <a href='https://chakra-ui.com'>Chakra UI</a>{' '}
+            and{' '}
+            <a href='https://github.com/react-icons/react-icons'>React Icons</a>{' '}
+            for flexible, accessible, and easy to use UI components and hooks.
+            And with Chakra’s theme provider, it’s easy to define default
+            colors, sizes, fonts, etc., and access them from anywhere in your
+            project.
+          </Article>
           <Article
             heading='CSS Modules + SASS Support'
             body="Banquet supports both default SCSS/SASS and S/CSS modules,
@@ -82,22 +82,13 @@ export default function Home(): React.ReactNode {
             commit. And when creating new components and pages with Plop (see
             below), Banquet will automatically generate a test file for you.
           </Article>
-          <Article heading='Chakra UI & React Icons'>
-            Banquet also includes <a href='https://chakra-ui.com'>Chakra UI</a>{' '}
-            and{' '}
-            <a href='https://github.com/react-icons/react-icons'>React Icons</a>{' '}
-            for flexible, accessible, and easy to use UI components and hooks.
-            And with Chakra’s theme provider, it’s easy to define default
-            colors, sizes, fonts, etc., and access them from anywhere in your
-            project.
-          </Article>
           <Article heading='Plop.js Templates + Code Generator'>
             Banquet comes with a <code>bake</code> command to invoke a CLI code
             generator called <a href='https://plopjs.com'>Plop</a>. You can use
             it to add new components, tests, pages, etc., based on the included{' '}
             <a href='https://handlebarsjs.com/guide/'>
               <code>.hbs</code>
-            </a>
+            </a>{' '}
             templates—or create ones yourself!
           </Article>
           <Article heading='Linting, Formatting, and Type-Checking with Husky'>
@@ -110,7 +101,7 @@ export default function Home(): React.ReactNode {
             These options are more are easily customizable and can be adjusted
             to your own needs.
           </Article>
-        </Box>
+        </Grid>
       </Section>
       <Section
         p='2rem'
@@ -126,12 +117,19 @@ export default function Home(): React.ReactNode {
           maxW='45ch'
           textAlign='center'
           sx={{ gap: '1rem' }}>
-          <Text fontSize='2rem' fontFamily='heading'>
+          <Text
+            fontSize={{ base: '2rem', md: '3rem' }}
+            fontWeight='700'
+            fontFamily='heading'
+            lineHeight='1.3'
+            my={8}>
             Start building with
             <br />
             <Text
               as='span'
               color='brand.gold'
+              textTransform='uppercase'
+              fontWeight='200'
               textShadow='.25px .25px 0 #3c3c3c'>
               {SITE_DATA.title}
             </Text>
