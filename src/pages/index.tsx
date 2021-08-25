@@ -51,7 +51,7 @@ export default function Home(): React.ReactNode {
             opacity='0.8'
             fontWeight='normal'
             lineHeight={1.5}>
-            Main Course is an opinionated starter and boilerplate for creating{' '}
+            Banquet is an opinionated starter and boilerplate for creating{' '}
             <a href='https://nextjs.org'>Next.js</a> projects, front-loading
             useful tools and configurations as defaults with minimal tinkering
             required.
@@ -62,7 +62,7 @@ export default function Home(): React.ReactNode {
           gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}>
           <Article
             heading='Modern DX with Typescript + Next.js'
-            body='Main Course is built with Next.js to deliver fast performance,
+            body='Banquet is built with Next.js to deliver fast performance,
               variable routing, static and/or server rendering, and more. All
               pages and components are written in Typescript, allowing for a
               more robust development experience.
@@ -70,21 +70,21 @@ export default function Home(): React.ReactNode {
           />
           <Article
             heading='CSS Modules + SASS Support'
-            body="Main Course supports both default SCSS/SASS and S/CSS modules,
+            body="Banquet supports both default SCSS/SASS and S/CSS modules,
               with no compiling or configuration needed. Use Chakra UI's inline
               styling shortcuts, create isolated CSS modules, or store and link
               your styles separately, all without any extra work."
           />
           <Article heading='Preconfigured Jest + React Testing Library'>
-            Main Course is preconfigured with Jest and React Testing Library to
+            Banquet is preconfigured with Jest and React Testing Library to
             allow for fast and isolated unit testing, and combines with Husky
             and <code>lint-staged</code> to ensure all tests pass on every
             commit. And when creating new components and pages with Plop (see
-            below), Main Course will automatically generate a test file for you.
+            below), Banquet will automatically generate a test file for you.
           </Article>
           <Article heading='Chakra UI & React Icons'>
-            Main Course also includes{' '}
-            <a href='https://chakra-ui.com'>Chakra UI</a> and{' '}
+            Banquet also includes <a href='https://chakra-ui.com'>Chakra UI</a>{' '}
+            and{' '}
             <a href='https://github.com/react-icons/react-icons'>React Icons</a>{' '}
             for flexible, accessible, and easy to use UI components and hooks.
             And with Chakra’s theme provider, it’s easy to define default
@@ -92,17 +92,16 @@ export default function Home(): React.ReactNode {
             project.
           </Article>
           <Article heading='Plop.js Templates + Code Generator'>
-            Main Course comes with a <code>bake</code> command to invoke a CLI
-            code generator called <a href='https://plopjs.com'>Plop</a>. You can
-            use it to add new components, tests, pages, etc., based on the
-            included{' '}
+            Banquet comes with a <code>bake</code> command to invoke a CLI code
+            generator called <a href='https://plopjs.com'>Plop</a>. You can use
+            it to add new components, tests, pages, etc., based on the included{' '}
             <a href='https://handlebarsjs.com/guide/'>
               <code>.hbs</code>
             </a>
             templates—or create ones yourself!
           </Article>
           <Article heading='Linting, Formatting, and Type-Checking with Husky'>
-            Main course includes git hooks through{' '}
+            Banquet includes git hooks through{' '}
             <a href='https://github.com/typicode/husky'>Husky</a> to ensure all
             tests pass and all code is linted (with{' '}
             <a href='https://eslint.org/'>ESLint</a>) and formatted (with{' '}

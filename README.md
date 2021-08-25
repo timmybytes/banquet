@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="/public/Icon-Dark.svg" width="200px" alt="Next Dish Logo" />
-  <h1>Main Course</h1>
+  <h1>Banquet</h1>
 </div>
 
 <div align="center">
@@ -11,11 +11,11 @@
 
 <div align="center">
   <img alt="Netlify" src="https://img.shields.io/netlify/8fda250e-338f-4ad0-b887-dbf08ff7781e">
-  <img alt="GitHub" src="https://img.shields.io/github/license/timmybytes/main-course">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/timmybytes/main-course">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/timmybytes/main-course">
-  <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/timmybytes/main-course">
-  <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/timmybytes/main-course">
+  <img alt="GitHub" src="https://img.shields.io/github/license/timmybytes/banquet">
+  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/timmybytes/banquet">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/timmybytes/banquet">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/timmybytes/banquet">
+  <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/timmybytes/banquet">
 </div>
 
 <p align="center">
@@ -42,7 +42,7 @@
 
 ## 🥘 About
 
-Main Course is an opinionated starter + boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from most of them. Main Course aims to solve this by front-loading more tools and configurations as defaults with less tinkering required.
+Banquet is an opinionated starter + boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but there always seems to be a few things I want that are missing from most of them. Banquet aims to solve this by front-loading more tools and configurations as defaults with less tinkering required.
 
 It's configured with the following out of the box:
 
@@ -55,7 +55,7 @@ It's configured with the following out of the box:
 
 ### 🍱 Structure
 
-Main Course follows a common React project style:
+Banquet follows a common React project style:
 
 ```bash
 public/
@@ -83,11 +83,11 @@ This differs a little from the initial Next.js structure, which doesn't use a `s
 
 Components are kept in their own directories with related files and a root `index.ts` for easy imports/exports, and when creating new components and pages with [`yarn bake`](./docs/plop.md), the same structure is followed by default.
 
-Main Course also uses a basic custom `Layout` component to wrap all pages, and includes a `Header/Nav` and `Footer` component. When creating new pages, you can forgo having to manually add a header/footer, and simply add your desired page content; it will be automatically wrapped with the given layout.
+Banquet also uses a basic custom `Layout` component to wrap all pages, and includes a `Header/Nav` and `Footer` component. When creating new pages, you can forgo having to manually add a header/footer, and simply add your desired page content; it will be automatically wrapped with the given layout.
 
 ### 🧁 Plop.js: Bake new components, pages, etc.
 
-Main Course comes with a `bake` command to invoke a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [`.hbs`](https://handlebarsjs.com/guide/) templates—or create ones yourself!
+Banquet comes with a `bake` command to invoke a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [`.hbs`](https://handlebarsjs.com/guide/) templates—or create ones yourself!
 
 The included templates can generate:
 
@@ -95,17 +95,17 @@ The included templates can generate:
 - _Only_ a `.tsx` component inside its own directory in `src/components`
 - A new page inside `src/pages`
 
-To use it, run `yarn bake` from the terminal, and choose from the options available, or [read more about using Plop in Main Course](docs/plop.md) and make your own custom templates.
+To use it, run `yarn bake` from the terminal, and choose from the options available, or [read more about using Plop in Banquet](docs/plop.md) and make your own custom templates.
 
 ### ⚡️ Chakra UI + React Icons
 
-Main Course also includes [Chakra UI](https://chakra-ui.com/) and [React Icons](https://github.com/react-icons/react-icons) for flexible, accessible, and easy to use UI components and hooks. And with Chakra’s theme provider, it’s easy to define default colors, sizes, fonts, etc., and access them from anywhere in your project.
+Banquet also includes [Chakra UI](https://chakra-ui.com/) and [React Icons](https://github.com/react-icons/react-icons) for flexible, accessible, and easy to use UI components and hooks. And with Chakra’s theme provider, it’s easy to define default colors, sizes, fonts, etc., and access them from anywhere in your project.
 
 ### Other Features
 
 #### Path Aliasing
 
-Main Course comes pre-configured with path aliasing for simplified imports during development. From `tsconfig.json`, you can customize or add to the predefined paths:
+Banquet comes pre-configured with path aliasing for simplified imports during development. From `tsconfig.json`, you can customize or add to the predefined paths:
 
 ```json
 "@components/*": ["src/components/*"],
@@ -131,21 +131,21 @@ export const SignInWrapper = () => ( <SignInPopup /> );
 
 #### CI Checks With Husky
 
-Main Course also comes with pre-commit and pre-push hooks ready to use via Husky and `lint-staged`. These are checks and commands run against staged code when you’re committing and pushing changes, respectively.
+Banquet also comes with pre-commit and pre-push hooks ready to use via Husky and `lint-staged`. These are checks and commands run against staged code when you’re committing and pushing changes, respectively.
 
 Current defaults include linting with ESLint, formatting with Prettier, and type checking with `tsc`.
 
 ## 🍽 Getting Started
 
-Currently Main Course is still a work in progress, so you’ll need to fork and clone the repo to use it. But coming soon, Main Course will be released as an `npm` package for easy project setup.
+Currently Banquet is still a work in progress, so you’ll need to fork and clone the repo to use it. But coming soon, Banquet will be released as an `npm` package for easy project setup.
 
 ### Local Development
 
 Clone the repo and install the dependencies:
 
 ```bash
-git clone https://github.com/timmybytes/main-course.git
-cd main-course
+git clone https://github.com/timmybytes/banquet.git
+cd banquet
 yarn
 ```
 
@@ -163,7 +163,7 @@ Update site-wide variables and data from `src/components/Meta/SiteData`. Here’
 
 ```tsx
 export const SITE_DATA = {
-  title: 'Main Course',
+  title: 'Banquet',
   description: 'A gourmet Next.js boilerplate',
   author: 'Timothy Merritt',
   authorHandle: '@timmybytes', // For Twitter link cards
@@ -177,8 +177,8 @@ This data will populate throughout the site, and can be easily imported into new
 
 ## Contributing
 
-Main Course hasn't been fully released yet, and is not currently looking for contributors.
+Banquet hasn't been fully released yet, and is not currently looking for contributors.
 
 ## 📄 License
 
-Main Course is offered under an [MIT license](./LICENSE.md).
+Banquet is offered under an [MIT license](./LICENSE.md).

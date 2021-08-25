@@ -9,22 +9,22 @@ import {
 
 // Info for HTML <head/> tags, Hero component, and Open Graph link sharing
 export const SITE_DATA = {
-  title: 'Main Course',
+  title: 'Banquet',
   description: 'A gourmet Next.js boilerplate',
   author: 'Timothy Merritt',
   authorHandle: '@timmybytes', // For Twitter link cards
   authorHomepage: 'https://timmybytes.com',
   color: '#e9c46a',
-  repo: 'https://github.com/timmybytes/main-course',
-  url: 'main-course.netlify.app',
-  img: 'main-course-card.png',
+  repo: 'https://github.com/timmybytes/banquet',
+  url: 'banquet.netlify.app',
+  img: 'banquet-card.png',
   logo: 'Icon-Dark.svg',
   hero: {
     heading: 'A Next.js boilerplate to satisfy your development cravings',
     subheading:
-      'Main Course is fast, powerful, and full-flavored with default tools and configurations for building modern websites',
+      'Banquet is fast, powerful, and full-flavored with default tools and configurations for building modern websites',
     image: 'images/cody-chan-GXhmQt6MFX8-unsplash.jpg',
-    ctaLink: 'https://github.com/timmybytes/main-course',
+    ctaLink: 'https://github.com/timmybytes/banquet',
     ctaLabel: 'Fork on GitHub',
     smallText: (
       <React.Fragment>
@@ -61,7 +61,7 @@ export const HEADER_LINKS = [
     ),
   },
   {
-    href: 'https://github.com/timmybytes/main-course',
+    href: 'https://github.com/timmybytes/banquet',
     title: (
       <Button
         size='sm'

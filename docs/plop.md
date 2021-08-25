@@ -1,6 +1,6 @@
 # 🧁 Baking Components and Pages with Plop.js
 
-**Main Course** comes with a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [`.hbs`](https://handlebarsjs.com/guide/) templates—or ones you create yourself!
+**Banquet** comes with a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [`.hbs`](https://handlebarsjs.com/guide/) templates—or ones you create yourself!
 
 The included templates can generate:
 
