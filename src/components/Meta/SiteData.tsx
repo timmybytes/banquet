@@ -16,7 +16,7 @@ export const SITE_DATA = {
   authorHomepage: 'https://timmybytes.com',
   color: '#e9c46a',
   repo: 'https://github.com/timmybytes/banquet',
-  url: 'banquet.netlify.app',
+  url: 'banquet-starter.netlify.app',
   img: 'banquet-card.png',
   logo: 'Icon-Dark.svg',
   hero: {
