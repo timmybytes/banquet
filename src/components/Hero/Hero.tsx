@@ -26,7 +26,7 @@ export const Hero = ({
       justify={{ base: 'center', md: 'space-around', xl: 'space-between' }}
       direction={{ base: 'column-reverse', md: 'row' }}
       wrap='nowrap'
-      minH='50vh'
+      minH='70vh'
       px={8}
       mb={16}
       mt={{ base: '3rem', md: '0' }}
@@ -57,7 +57,12 @@ export const Hero = ({
           color='brand.gold'
           bgColor='brand.dark'
         />
-        <Text fontSize='xs' mt={2} textAlign='left' opacity='0.6'>
+        <Text
+          d={{ base: 'none', md: 'block' }}
+          fontSize='xs'
+          mt={2}
+          textAlign='left'
+          opacity='0.6'>
           {smallText}
         </Text>
       </Stack>
