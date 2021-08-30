@@ -1,9 +1,9 @@
 <!-- Header Content -->
 
-<div align="center">
-  <img src="/public/Icon-Dark.svg" width="200px" alt="Next Dish Logo" />
-  <h1>Banquet</h1>
-</div>
+<h1 align="center">
+  <img src="/public/Icon-Dark.svg" width="200px" alt="Banquet Logo Icon" />
+  <img src="/public/text-logo.svg" width="100%" alt="Banquet Text Logo" />
+</h1>
 
 <div align="center">
   <p>A gourmet Next.js starter + boilerplate</p>
@@ -17,15 +17,6 @@
   <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/timmybytes/banquet">
   <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/timmybytes/banquet">
 </div>
-
-<p align="center">
-  <sub>Built by <a href="https://timmybytes.com"target="_blank"rel="noopener noreferrer">Timothy Merritt</a></sub>
-</p>
-
-<!-- prettier-ignore -->
-<p align="center">
-  <✨😙👌✨/>
-</p>
 
 <!-- Main Content -->
 
