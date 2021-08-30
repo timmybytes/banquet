@@ -1,7 +1,6 @@
 import { CTAButton } from '@components/CTAButton'
 import Link from 'next/link'
 import React from 'react'
-import { IoIceCreamOutline, IoRestaurantOutline } from 'react-icons/io5'
 
 // Info for HTML <head/> tags, Hero component, and Open Graph link sharing
 export const SITE_DATA = {
@@ -42,19 +41,11 @@ export const SITE_DATA = {
 export const HEADER_LINKS = [
   {
     href: '#',
-    title: (
-      <>
-        <IoRestaurantOutline size='22px' style={{ display: 'inline' }} /> Home
-      </>
-    ),
+    title: 'Home',
   },
   {
     href: '#features',
-    title: (
-      <>
-        <IoIceCreamOutline size='22px' style={{ display: 'inline' }} /> Features
-      </>
-    ),
+    title: 'Features',
   },
   {
     href: 'https://github.com/timmybytes/banquet',

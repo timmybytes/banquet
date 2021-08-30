@@ -30,6 +30,7 @@ export const CTAButton = ({
             py='4'
             px='4'
             font='body'
+            fontSize='lg'
             lineHeight='1'
             size='md'
             _hover={{

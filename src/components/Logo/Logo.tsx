@@ -16,7 +16,7 @@ export const Logo = ({ ...rest }): React.ReactElement => (
       fontFamily='heading'
       textShadow='.25px .25px 0 #3c3c3c'
       textTransform='uppercase'
-      fontSize={{ lg: '2.75rem', md: '2.5rem', sm: '2rem', base: '1.5rem' }}
+      fontSize={{ lg: '2.75rem', md: '2.5rem', sm: '2rem', base: '1.75rem' }}
       p='0 1rem'
       whiteSpace='nowrap'>
       {SITE_DATA.title}

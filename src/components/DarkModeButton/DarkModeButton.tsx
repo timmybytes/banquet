@@ -18,7 +18,6 @@ export const DarkModeButton = ({
       borderRadius='full'
       p={0}
       onClick={toggleColorMode}
-      // mr={8}
       sx={sx}
       {...rest}>
       {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
