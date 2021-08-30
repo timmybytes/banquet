@@ -62,8 +62,8 @@ export const HEADER_LINKS = [
       <CTAButton
         link={'https://github.com/timmybytes/banquet'}
         label='View on GitHub'
-        color='brand.dark'
-        bgColor='brand.gold'
+        color='brand.gold'
+        bgColor='brand.dark'
       />
     ),
   },

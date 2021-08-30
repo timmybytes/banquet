@@ -19,25 +19,19 @@ import Link from 'next/link'
 import React, { useRef } from 'react'
 import { IoIosMenu } from 'react-icons/io'
 
-type NavItemProps = {
+type LinkItemProps = {
   href: string
   isLast?: boolean
   children?: React.ReactNode
   onClick?: () => void
 }
 
-const NavItems = ({ href, isLast, children, ...rest }: NavItemProps) => {
+const LinkItems = ({ href, isLast, children, ...rest }: LinkItemProps) => {
   const { colorMode } = useColorMode()
   return (
-    <Text
-      mb={{ base: isLast ? 0 : 8, sm: 0 }}
-      mr={{ base: 0, sm: isLast ? 0 : 8 }}
-      display='block'
-      cursor='pointer'
-      fontSize={{ md: '1.25rem', base: '1.15rem' }}
-      {...rest}>
+    <>
       {!isLast && (
-        <Link href={href} passHref>
+        <Link href={href} passHref {...rest}>
           <Text
             as='a'
             color={colorMode === 'light' ? 'brand.dark' : 'brand.silver'}
@@ -50,7 +44,7 @@ const NavItems = ({ href, isLast, children, ...rest }: NavItemProps) => {
       )}
       {/* Removes redundant link for CTA button */}
       {isLast && <Text>{children}</Text>}
-    </Text>
+    </>
   )
 }
 
@@ -60,14 +54,22 @@ type LinksProps = {
 
 const Links = ({ onClose }: LinksProps) => (
   <Stack direction={['column', 'row']} spacing={4} align='stretch'>
+    <DarkModeButton sx={{ display: { base: 'none', md: 'initial' } }} />
     {HEADER_LINKS.map(({ href, title }, i) => (
-      <Box key={i} h='40px'>
-        <NavItems
+      <Box
+        key={i}
+        d='flex'
+        px={4}
+        fontSize={{ md: '1.15rem', base: '1.25rem' }}
+        alignItems='center'
+        justifyContent={{ base: 'flex-start', md: 'center' }}
+        h='40px'>
+        <LinkItems
           href={href}
           onClick={onClose}
           {...{ isLast: i === HEADER_LINKS.length - 1 }}>
           {title}
-        </NavItems>
+        </LinkItems>
       </Box>
     ))}
   </Stack>
@@ -92,15 +94,15 @@ const MenuDrawer = () => {
           <DrawerCloseButton />
           <DrawerHeader
             fontFamily='heading'
-            fontSize={{ base: '1.75rem', md: '2rem' }}
+            fontSize={{ base: '2.25rem', md: '2.75rem' }}
             fontWeight='700'>
             Menu
           </DrawerHeader>
 
           <DrawerBody>
-            <Box mb={8}>
-              <DarkModeButton />
-            </Box>
+            <DarkModeButton
+              sx={{ color: 'brand.dark', background: 'brand.gold' }}
+            />
             <Links onClose={onClose} />
           </DrawerBody>
 

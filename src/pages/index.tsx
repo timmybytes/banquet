@@ -138,8 +138,8 @@ export default function Home(): React.ReactNode {
           <CTAButton
             link={SITE_DATA.repo}
             label='View on GitHub'
-            color='brand.dark'
-            bgColor='brand.gold'
+            color='brand.gold'
+            bgColor='brand.dark'
           />
         </Box>
       </Section>

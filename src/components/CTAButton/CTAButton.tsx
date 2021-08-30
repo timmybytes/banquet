@@ -1,4 +1,4 @@
-import { Box, Button } from '@chakra-ui/react'
+import { Box, Button, useColorMode } from '@chakra-ui/react'
 import Link from 'next/link'
 import { IoLogoOctocat } from 'react-icons/io5'
 
@@ -18,21 +18,23 @@ export const CTAButton = ({
   children,
   ...rest
 }: CTAButtonProps): React.ReactElement => {
+  const { colorMode } = useColorMode()
   return (
     <Box {...rest}>
       <Link href={link} passHref>
         <a>
           <Button
-            backgroundColor={bgColor}
-            color={color}
+            backgroundColor={colorMode === 'light' ? bgColor : color}
+            color={colorMode === 'light' ? color : bgColor}
             borderRadius='8px'
             py='4'
             px='4'
+            font='body'
             lineHeight='1'
             size='md'
             _hover={{
-              bg: color,
-              color: bgColor,
+              bg: colorMode === 'light' ? color : bgColor,
+              color: colorMode === 'light' ? bgColor : color,
             }}>
             <IoLogoOctocat
               size='22px'
