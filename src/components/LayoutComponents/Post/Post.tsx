@@ -9,20 +9,20 @@ import {
 } from '@chakra-ui/react'
 
 type PostProps = {
-  title: string
+  title?: string
   date?: string
   children?: React.ReactNode
 }
 
 export const Post = ({
   date = new Date().toLocaleDateString(),
-  title,
+  title = 'New Post',
   children,
   ...rest
 }: PostProps): React.ReactElement => {
   return (
     <Box {...rest}>
-      <Heading py={4}>{title || 'New Post'}</Heading>
+      <Heading py={4}>{title}</Heading>
       <Center height='40px'>
         <Badge rounded='md' variant='solid' mr={4}>
           {date}
