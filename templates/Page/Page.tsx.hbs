@@ -1,42 +1,22 @@
-import styles from '@styles/Page.module.scss'; import Head from 'next/head';
-import Image from 'next/image'; import React from 'react'; export default
-function About() { return (
-<div className='{styles.page}'>
+import { Box, Heading, Text } from '@chakra-ui/react'
+import React from 'react'
 
-  <Head>
-    <title>Banquet | {{name}}</title>
-    <meta name='description' content='A hearty Next.js template' />
-    <link rel='icon' href='/favicon.ico' />
-  </Head>
-
-  <main className='{styles.main}'>
-    <h1 className='{styles.title}'>{{name}}</h1>
-    <div className='{styles.description}'>
-      <h2>Dummy text</h2>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, ea
-        nemo cupiditate officiis totam a accusamus, sint, sunt praesentium
-        tenetur eveniet neque repudiandae consequuntur eius error minima
-        perspiciatis cumque unde?
-      </p>
-      <h2>Code</h2>
-      <pre>
-        <code>const something = (x) ={'>'} return x</code>
-      </pre>
-    </div>
-  </main>
-
-  <footer className='{styles.footer}'>
-    <a
-      href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-      target='_blank'
-      rel='noopener noreferrer'
-    >
-      Made with 🍽 by Timothy Merritt
-      <span className='{styles.logo}'>
-        <Image src='/vercel.svg' alt='Vercel Logo' width='{72}' height='{16}' />
-      </span>
-    </a>
-  </footer>
-</div>
-); }
+export default function {{ name }}() {
+return (
+  <Box maxW={{ base: '100%' , lg: '85ch' }}>
+    <Heading py={8}>{{ name }}</Heading>
+    <Text py={4}>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, ea
+      nemo cupiditate officiis totam a accusamus, sint, sunt praesentium
+      tenetur eveniet neque repudiandae consequuntur eius error minima
+      perspiciatis cumque unde?
+    </Text>
+    <Text py={4}>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde similique
+      totam, sapiente exercitationem doloremque commodi possimus maiores omnis
+      porro dolores quaerat alias, facilis, aliquid neque vel itaque adipisci
+      nemo eaque?
+    </Text>
+  </Box>
+  )
+}

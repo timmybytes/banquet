@@ -1,5 +1,5 @@
 import { Flex, useColorMode } from '@chakra-ui/react'
-import { Nav } from '@components/Layout/Header/Nav'
+import { Nav } from '@components/LayoutComponents/Header/Nav'
 import { Logo } from '@components/Logo'
 import Link from 'next/link'
 import React from 'react'

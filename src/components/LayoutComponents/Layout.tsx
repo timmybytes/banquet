@@ -1,6 +1,6 @@
-import { Footer } from '@components/Layout/Footer'
-import { Header } from '@components/Layout/Header'
-import { Main } from '@components/Layout/Main'
+import { Footer } from '@components/LayoutComponents/Footer'
+import { Header } from '@components/LayoutComponents/Header'
+import { Main } from '@components/LayoutComponents/Main'
 import { LayoutWrapper } from './LayoutWrapper'
 
 type LayoutProps = {

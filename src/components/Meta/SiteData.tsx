@@ -40,12 +40,16 @@ export const SITE_DATA = {
 // Links for Header component with Ionicon icons
 export const HEADER_LINKS = [
   {
-    href: '#',
+    href: '/',
     title: 'Home',
   },
   {
-    href: '#features',
+    href: '/#features',
     title: 'Features',
+  },
+  {
+    href: '/blog',
+    title: 'Blog',
   },
   {
     href: 'https://github.com/timmybytes/banquet',

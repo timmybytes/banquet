@@ -6,7 +6,7 @@ type {{pascalCase name}}Props = {
 
 export const {{pascalCase name}} = ({children, ...rest}: {{pascalCase name}}Props): React.ReactElement => {
   return (
-    <Box{...rest}>
+    <Box {...rest}>
       {children}
     </Box>
   );

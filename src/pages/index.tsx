@@ -1,8 +1,8 @@
 import { Box, Grid, Text } from '@chakra-ui/react'
 import { CTAButton } from '@components/CTAButton'
 import { Hero } from '@components/Hero'
-import { Article } from '@components/Layout/Article'
-import { Section } from '@components/Layout/Section'
+import { Article } from '@components/LayoutComponents/Article'
+import { Section } from '@components/LayoutComponents/Section'
 import { SITE_DATA } from '@components/Meta'
 import React from 'react'
 
