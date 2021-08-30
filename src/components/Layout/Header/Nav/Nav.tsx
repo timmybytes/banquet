@@ -42,7 +42,7 @@ const LinkItems = ({ href, isLast, children, ...rest }: LinkItemProps) => {
         </Link>
       )}
       {/* Removes redundant link for CTA button */}
-      {isLast && <Text>{children}</Text>}
+      {isLast && <Box>{children}</Box>}
     </>
   )
 }
