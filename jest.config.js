@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   moduleDirectories: ['node_modules', 'src'],
@@ -10,4 +10,3 @@ const config = {
   testEnvironment: 'jsdom',
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
 }
-export default config
