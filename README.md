@@ -19,7 +19,7 @@
 
 <!-- Main Content -->
 
-## 🍛 Contents
+## Contents
 
 - [About](#about)
   - [Structure](#structure)
@@ -30,7 +30,7 @@
 - [Customizing](#customizing)
 - [License](./LICENSE)
 
-## 🥘 About
+## About
 
 Banquet is an opinionated starter + boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but Banquet front-loads more tools and configurations as defaults with less tinkering required.
 
@@ -43,7 +43,7 @@ Banquet comes with the following out of the box:
 - Customizable templating: [Plop.js](https://github.com/plopjs/plop) code generator
 - CI/CD: Pre-commit and pre-push hooks with [Husky](https://github.com/typicode/husky) and [`lint-staged`](https://github.com/okonet/lint-staged)
 
-### 🍱 Structure
+### Structure
 
 Banquet follows a common React project style:
 
@@ -73,13 +73,13 @@ Components are kept in their own directories with related files and a root `inde
 
 Banquet also uses a basic custom `Layout` component to wrap all pages, and includes a `Header/Nav` and `Footer` component. When creating new pages, you can forgo having to manually add a header/footer, and simply add your desired page content; it will be automatically wrapped with the given layout.
 
-### ⚡️ Chakra UI + React Icons
+### Chakra UI + React Icons
 
 Banquet also includes [Chakra UI](https://chakra-ui.com/) and [React Icons](https://github.com/react-icons/react-icons) for flexible, accessible, and easy to use UI components and hooks. And with Chakra’s theme provider, it’s easy to define default colors, sizes, fonts, etc., and access them from anywhere in your project.
 
 [Read more about using Chakra in Banquet](docs/chakra.md)
 
-### 🧁 Plop.js: Bake new components, pages, etc.
+### Plop.js: Bake new components, pages, etc.
 
 Banquet comes with a `bake` command to invoke a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [Handlebars.js-style](https://handlebarsjs.com/guide/) templates—or create ones yourself!
 
@@ -125,7 +125,7 @@ Banquet also comes with pre-commit and pre-push hooks ready to use via Husky and
 
 Current defaults include linting with ESLint, formatting with Prettier, and type checking with `tsc`, but you can add whatever customizations you like.
 
-## 🍽 Getting Started
+## Getting Started
 
 Clone the repo and install the dependencies:
 
@@ -161,6 +161,6 @@ export const SITE_DATA = {
 
 This data will populate throughout the site, and can be easily imported into new components/pages with `import {SITE_DATA} from ‘@components/Meta`
 
-## 📄 License
+## License
 
 Banquet is offered under an [MIT license](./LICENSE.md).
