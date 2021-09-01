@@ -127,10 +127,6 @@ Current defaults include linting with ESLint, formatting with Prettier, and type
 
 ## 🍽 Getting Started
 
-Currently Banquet is still a work in progress, so you’ll need to fork and clone the repo to use it. But coming soon, Banquet will be released as an `npm` package for easy project setup.
-
-### Local Development
-
 Clone the repo and install the dependencies:
 
 ```bash
@@ -164,10 +160,6 @@ export const SITE_DATA = {
 ```
 
 This data will populate throughout the site, and can be easily imported into new components/pages with `import {SITE_DATA} from ‘@components/Meta`
-
-## Contributing
-
-Banquet hasn't been fully released yet, and is not currently looking for contributors.
 
 ## 📄 License
 
