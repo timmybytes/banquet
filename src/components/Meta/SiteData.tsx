@@ -17,8 +17,7 @@ export const SITE_DATA = {
     heading: 'A Next.js starter to satisfy your development cravings',
     subheading:
       'Banquet is configured for an excellent developer experience, and includes a feast of tooling and presets for building on the modern web.',
-    image:
-      'https://images.unsplash.com/photo-1591814468924-caf88d1232e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
+    image: 'images/cody-chan-GXhmQt6MFX8-unsplash.jpg',
     ctaLink: 'https://github.com/timmybytes/banquet',
     ctaLabel: 'Fork on GitHub',
     smallText: (
