@@ -12,13 +12,13 @@ export const SITE_DATA = {
   color: '#e9c46a',
   repo: 'https://github.com/timmybytes/banquet',
   url: 'banquet-starter.netlify.app',
-  img: 'banquet-card.png',
-  logo: 'Icon-Dark.svg',
+  img: 'banquet-card.png', // For Open Graph link preview, NOTE - SVG is not supported
   hero: {
     heading: 'A Next.js starter to satisfy your development cravings',
     subheading:
       'Banquet is configured for an excellent developer experience, and includes a feast of tooling and presets for building on the modern web.',
-    image: 'images/cody-chan-GXhmQt6MFX8-unsplash.jpg',
+    image:
+      'https://images.unsplash.com/photo-1591814468924-caf88d1232e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
     ctaLink: 'https://github.com/timmybytes/banquet',
     ctaLabel: 'Fork on GitHub',
     smallText: (

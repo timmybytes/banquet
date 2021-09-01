@@ -3,6 +3,16 @@
   "version": "0.1.0",
   "license": "MIT",
   "author": "Timothy Merritt",
+  "description": "A gourmet Next.js starter + boilerplate",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timmybytes/banquet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/timmybytes/banquet/issues"
+  },
+  "homepage": "https://banquet-starter.netlify.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

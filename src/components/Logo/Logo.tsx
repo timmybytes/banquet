@@ -8,7 +8,6 @@ export const Logo = ({ ...rest }): React.ReactElement => (
     justifyContent='center'
     p={{ lg: '1rem', sm: '0' }}
     {...rest}>
-    {/* <Image src={SITE_DATA.logo} width='48px' height='48px' /> */}
     <Text
       as='h1'
       color='brand.gold'

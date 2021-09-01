@@ -1,8 +1,7 @@
 <!-- Header Content -->
 
 <h1 align="center">
-  <!-- <img src="/public/Icon-Dark.svg" width="200px" alt="Banquet Logo Icon" /> -->
-  <img src="/public/text-logo.png" width="100%" alt="Banquet Text Logo" />
+  <img src="/public/text-logo.svg" width="100%" alt="Banquet Text Logo" />
 </h1>
 
 <div align="center">
@@ -50,8 +49,6 @@ Banquet follows a common React project style:
 
 ```bash
 public/
-  images/
-  favicon
 src/
   assets/
   components/
