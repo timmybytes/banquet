@@ -130,8 +130,8 @@ Current defaults include linting with ESLint, formatting with Prettier, and type
 Clone the repo and install the dependencies:
 
 ```bash
-git clone https://github.com/timmybytes/banquet.git
-cd banquet
+git clone https://github.com/timmybytes/banquet.git your-project-name
+cd your-project-name
 yarn
 ```
 
@@ -139,6 +139,7 @@ To run the development server on port 3000:
 
 ```bash
 yarn dev
+# or use yarn dev -p 3001 etc for custom port
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
