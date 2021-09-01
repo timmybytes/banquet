@@ -1,7 +1,7 @@
 <!-- Header Content -->
 
 <h1 align="center">
-  <img src="/public/text-logo.png" width="100%" alt="Banquet Text Logo" />
+  <img src="/public/text-logo.svg" width="100%" alt="Banquet Text Logo" />
 </h1>
 
 <div align="center">
