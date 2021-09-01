@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --config jest.config.js",
+    "test:changed": "jest --config jest.config.js --onlyChanged",
     "test:watch": "yarn test --watch",
     "bake": "plop",
     "bake-component": "plop Component _",
