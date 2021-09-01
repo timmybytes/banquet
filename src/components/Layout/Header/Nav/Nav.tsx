@@ -86,12 +86,16 @@ const Links = ({ onClose }: LinksProps) => {
 }
 
 const MenuDrawer = () => {
+  const { colorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef<HTMLButtonElement>(null)
 
   return (
     <>
-      <Button ref={btnRef} onClick={onOpen}>
+      <Button
+        bg={colorMode === 'light' ? 'white' : 'gray.800'}
+        ref={btnRef}
+        onClick={onOpen}>
         <IoIosMenu size='22px' />
       </Button>
       <Drawer
@@ -100,7 +104,7 @@ const MenuDrawer = () => {
         onClose={onClose}
         finalFocusRef={btnRef}>
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent bg={colorMode === 'light' ? 'white' : 'gray.800'}>
           <DrawerCloseButton />
 
           <DrawerBody pt={10}>
