@@ -1,5 +1,5 @@
 {
-  "name": "banquet",
+  "name": "@timmybytes/banquet",
   "version": "0.1.0",
   "license": "MIT",
   "author": "Timothy Merritt",
@@ -76,5 +76,9 @@
     "**/*.(js|json|ts|tsx)": [
       "prettier --write"
     ]
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
   }
 }
