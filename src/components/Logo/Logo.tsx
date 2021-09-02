@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react'
-import { SITE_DATA } from '@components/Meta'
+import { SITE_DATA } from '@data/SiteData'
 
 export const Logo = ({ ...rest }): React.ReactElement => (
   <Box

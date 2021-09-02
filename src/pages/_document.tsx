@@ -1,5 +1,5 @@
 import { ColorModeScript } from '@chakra-ui/react'
-import { MetaHead } from '@components/Meta'
+import { CustomHead } from '@components/CustomHead'
 import { theme } from '@theme/index'
 import Document, {
   DocumentContext,
@@ -22,7 +22,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <MetaHead />
+          <CustomHead />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

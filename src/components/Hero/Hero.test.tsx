@@ -1,4 +1,4 @@
-import { SITE_DATA } from '@components/Meta'
+import { SITE_DATA } from '@data/SiteData'
 import { render } from '@test/test-utils'
 import { Hero } from './Hero'
 

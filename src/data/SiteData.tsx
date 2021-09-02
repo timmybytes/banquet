@@ -59,7 +59,6 @@ export const HEADER_LINKS = [
   },
 ]
 
-//
 export const FOOTER_DATA = (
   <>
     Made with 🧁 by{' '}

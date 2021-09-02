@@ -13,7 +13,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { DarkModeButton } from '@components/DarkModeButton'
-import { FOOTER_DATA, HEADER_LINKS } from '@components/Meta'
+import { FOOTER_DATA, HEADER_LINKS } from '@data/SiteData'
 import Link from 'next/link'
 import React, { useRef } from 'react'
 import { IoIosMenu } from 'react-icons/io'
