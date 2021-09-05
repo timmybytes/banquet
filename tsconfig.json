@@ -19,8 +19,8 @@
     "target": "ESNext",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@data/*": ["src/data/*"],
       "@pages/*": ["src/pages/*"],
-      "@hooks/*": ["hooks/*"],
       "@public/*": ["public/*"],
       "@test/*": ["test/*"],
       "@styles/*": ["src/styles/*"],

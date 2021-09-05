@@ -1,17 +1,27 @@
 import { Box, Text } from '@chakra-ui/react'
-import { SITE_DATA } from '@components/Meta'
+import { SITE_DATA } from '@data/SiteData'
+import React from 'react'
 
-export const Logo = ({ ...rest }): React.ReactElement => (
+type LogoProps = {
+  children?: React.ReactNode
+  sx?: Record<string, unknown>
+}
+
+export const Logo = ({
+  children,
+  sx,
+  ...rest
+}: LogoProps): React.ReactElement => (
   <Box
     display='flex'
     alignItems='center'
     justifyContent='center'
     p={{ lg: '1rem', sm: '0' }}
+    sx={sx}
     {...rest}>
-    {/* <Image src={SITE_DATA.logo} width='48px' height='48px' /> */}
     <Text
       as='h1'
-      color='brand.gold'
+      color='brand.primary'
       fontWeight='400'
       fontFamily='heading'
       textShadow='.25px .25px 0 #3c3c3c'
@@ -21,5 +31,6 @@ export const Logo = ({ ...rest }): React.ReactElement => (
       whiteSpace='nowrap'>
       {SITE_DATA.title}
     </Text>
+    {children}
   </Box>
 )

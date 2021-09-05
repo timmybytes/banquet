@@ -1,6 +1,6 @@
-import { SITE_DATA } from '@components/Meta'
+import { SITE_DATA } from '@data/SiteData'
 
-export const MetaHead = (): JSX.Element => (
+export const CustomHead = (): JSX.Element => (
   <>
     <meta name='title' content={SITE_DATA.title} key='meta-title' />
     <meta name='description' content={SITE_DATA.description} />

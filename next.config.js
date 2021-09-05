@@ -1,8 +1,8 @@
-const path = require("path");
+const path = require('path')
 
 module.exports = {
-  target: "serverless",
+  target: 'serverless',
   sassOptions: {
-    includePaths: [path.join(__dirname, "src/styles")],
+    includePaths: [path.join(__dirname, 'src/styles')],
   },
-};
+}

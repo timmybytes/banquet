@@ -24,7 +24,7 @@ export const Header = ({ ...rest }): React.ReactElement => {
       <Flex align='center'>
         <Link href='/'>
           <a>
-            <Logo w='max-content' />
+            <Logo sx={{ w: 'max-content' }} />
           </a>
         </Link>
       </Flex>

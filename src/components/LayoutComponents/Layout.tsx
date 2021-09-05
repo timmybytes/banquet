@@ -1,7 +1,9 @@
-import { Footer } from '@components/LayoutComponents/Footer'
-import { Header } from '@components/LayoutComponents/Header'
-import { Main } from '@components/LayoutComponents/Main'
-import { LayoutWrapper } from './LayoutWrapper'
+import {
+  Footer,
+  Header,
+  LayoutWrapper,
+  Main,
+} from '@components/LayoutComponents'
 
 type LayoutProps = {
   children?: React.ReactNode
