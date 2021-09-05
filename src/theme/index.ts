@@ -13,7 +13,4 @@ export const theme = extendTheme({
   fonts,
   colors,
   config,
-  components: {
-    Heading: {},
-  },
 })

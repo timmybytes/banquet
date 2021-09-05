@@ -16,9 +16,7 @@ class MyDocument extends Document {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
-
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  render() {
+  render(): React.ReactElement {
     return (
       <Html>
         <Head>

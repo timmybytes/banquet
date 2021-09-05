@@ -33,9 +33,9 @@ const LinkItems = ({ href, isLast, children, ...rest }: LinkItemProps) => {
         <Link href={href} passHref {...rest}>
           <Text
             as='a'
-            color={colorMode === 'light' ? 'brand.dark' : 'brand.silver'}
+            color={colorMode === 'light' ? 'brand.dark' : 'brand.light'}
             _hover={{
-              color: 'brand.gold',
+              color: 'brand.primary',
             }}>
             {children}
           </Text>
@@ -111,7 +111,7 @@ const MenuDrawer = () => {
             <DarkModeButton
               sx={{
                 color: 'brand.dark',
-                background: 'brand.gold',
+                background: 'brand.primary',
               }}
             />
             <Links onClose={onClose} />

@@ -15,7 +15,7 @@ export const styles = {
       fontFamily: 'Menlo, monospace',
       fontSize: '1rem',
       background: 'gray.900',
-      color: 'brand.gold',
+      color: 'brand.primary',
       borderRadius: '4px',
       padding: '2px 4px',
     },

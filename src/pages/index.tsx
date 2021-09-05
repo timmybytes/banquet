@@ -3,27 +3,29 @@ import { CTAButton } from '@components/CTAButton'
 import { FeaturesSection } from '@components/FeaturesSection'
 import { Hero } from '@components/Hero'
 import { Section } from '@components/Layout/Section'
-import { SITE_DATA } from '@data/SiteData'
+import { HERO_DATA, SITE_DATA } from '@data/SiteData'
 import React from 'react'
 
 export default function Home(): React.ReactNode {
   return (
     <>
       <Hero
-        heading={SITE_DATA.hero.heading}
-        subheading={SITE_DATA.hero.subheading}
-        image={SITE_DATA.hero.image}
-        ctaLink={SITE_DATA.hero.ctaLink}
-        ctaLabel={SITE_DATA.hero.ctaLabel}
-        smallText={SITE_DATA.hero.smallText}
+        heading={HERO_DATA.heading}
+        subheading={HERO_DATA.subheading}
+        image={HERO_DATA.image}
+        ctaLink={HERO_DATA.ctaLink}
+        ctaLabel={HERO_DATA.ctaLabel}
+        smallText={HERO_DATA.smallText}
       />
       <FeaturesSection />
       <Section
-        p='2rem'
-        d='flex'
-        flexDirection='column'
-        justifyContent='center'
-        alignItems='center'>
+        sx={{
+          py: '2rem',
+          d: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <Box
           d='flex'
           flexDirection='column'
@@ -42,7 +44,7 @@ export default function Home(): React.ReactNode {
             <br />
             <Text
               as='span'
-              color='brand.gold'
+              color='brand.primary'
               textTransform='uppercase'
               fontWeight='200'
               textShadow='.25px .25px 0 #3c3c3c'>
@@ -53,7 +55,7 @@ export default function Home(): React.ReactNode {
           <CTAButton
             link={SITE_DATA.repo}
             label='View on GitHub'
-            color='brand.gold'
+            color='brand.primary'
             bgColor='brand.dark'
           />
         </Box>

@@ -144,23 +144,77 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Customizing
+## Customizing Banquet
 
-Update site-wide variables and data from `src/components/Meta/SiteData`. Here’s part of the `SITE_DATA` object, where you can add your own branding/copy for things like link-sharing previews and meta tags:
+### Adding your own metadata
+
+Use the various objects in [`SiteData`](src/data/SiteData) to update Banquet with your own information, including data for site metadata, `header` and `footer` links, and information for the homepage’s `Hero` component.
+
+The `CustomHead` component adds a variety of `meta` tags and [Open Graph](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website/) information for personalizing Banquet for your own needs, including link sharing data and images, favicons, icons, and more.
+
+### Components and basic config
+
+Banquet follows a familiar React project structure, with a few caveats. Most config files are located in the root directory, including those for `jest`, `eslint`, `prettier`, `next`, and `typescript`, among other. The `src` directory holds `assets`, `components`, `data`, `pages`, and `theme` files. You can rearrange these however you like, but keep in mind because Banquet is a Next app, [there are specific ways in which the `pages` directory files must be laid out](https://nextjs.org/docs/basic-features/pages).
+
+In most cases, components are grouped together with a default index and test file.
+
+> Note that for tests, _these are not intended to be left as-is_, but rather are simply basic templates for you to add more specific tests as you customize the app. The default tests will simply check to make sure the associated component renders.
+
+Component directories with default index files serve as a way to easily import related components elsewhere in the app. For example, the `Layout` component directory includes many simple core layout elements that are slightly tweaked with Chakra UI (`Section`, `Article`, `Main`, etc). Since these are all exported from the `Layout/index.ts` file, they can be imported together like this:
 
 ```tsx
-export const SITE_DATA = {
-  title: 'Banquet',
-  description: 'A gourmet Next.js boilerplate',
-  author: 'Timothy Merritt',
-  authorHandle: '@timmybytes', // For Twitter link cards
-  authorHomepage: 'https://timmybytes.com',
-  color: '#e9c46a',
-  // etc.
-}
+import { Main, Article, Section, Layout } from '@components/Layout'
 ```
 
-This data will populate throughout the site, and can be easily imported into new components/pages with `import {SITE_DATA} from ‘@components/Meta`
+Similarly, Banquet uses path aliasing to make it easier to resolve paths as your app grows, allowing for you to import from `@components/SomeComponent` instead of `../../../../components/SomeComponent`. Supported aliases are configured in `tsconfig.json`, and by default include:
+
+```json
+"paths": {
+      "@components/*": ["src/components/*"],
+      "@data/*": ["src/data/*"],
+      "@pages/*": ["src/pages/*"],
+      "@public/*": ["public/*"],
+      "@test/*": ["test/*"],
+      "@styles/*": ["src/styles/*"],
+      "@theme/*": ["src/theme/*"],
+      "@utils/*": ["src/utils/*"],
+      "@/*": ["src/*"]
+    }
+```
+
+> Note that for Jest+React Testing Library tests, however, if you’re using path aliasing in your test file, you’ll also need to add that alias to `jest.config.js` as well.
+
+### NVM and Node Releases
+
+Banquet includes a `.nvmrc` file to enforce using the active [LTS of Node](https://nodejs.org/en/about/releases/). This ensures full functionality of all features and configurations.
+
+### Chakra UI and global theming
+
+Banquet uses Chakra UI as a component library with a few presets. [Theming with Chakra is straightforward](https://chakra-ui.com/docs/theming/customize-theme), and can be updated with your own preferences. In `src/pages/_app.tsx`, the Chakra Provider wraps the overall app (as well as a custom `Layout` component that will wrap all pages by default), and aside from[Chakra’s own defaults](https://chakra-ui.com/docs/theming/theme), adds a few settings via a `theme` object imported from `src/theme/index.ts`.
+
+Theme files, [per Chakra’s own recommendations](https://chakra-ui.com/docs/theming/customize-theme#scaling-out-your-project), are split into `colors.ts`, `fonts.ts`, etc., to allow for scalability, but exported together from the theme `index.ts` file. These include some custom global styles, fonts, and colors for Banquet’s own design scheme, but you can simply substitute your own preferences here.
+
+### Fonts
+
+Banquet uses [`@fontsource`](https://fontsource.org/docs/introduction) for efficiently self-hosting open source fonts. By default it includes Inter and Playfair Display. You can add your own preferred fonts from ones supported by `fontsource` with `yarn add @fontsource/some-font`, update the `src/theme/fonts.ts` file, and import the appropriate font-weights into `src/pages/_document.tsx`.
+
+### Plop.js: Bake new components, pages, etc.
+
+Banquet comes with a `bake` command to invoke a CLI code generator called [Plop](~https://plopjs.com~). You can use it to add new components, tests, pages, etc., based on the included [Handlebars.js-style](~https://handlebarsjs.com/guide/~) templates—or create ones yourself!
+
+The included templates can generate:
+
+- A new `tsx` component with accompanying `.test`, `.scss`, and `index.ts` files inside their own directory in `src/components`
+- _Only_ a `.tsx` component inside its own directory in `src/components`
+- A new page inside `src/pages`
+
+To use it, run `yarn bake` from the terminal, and choose from the options available, or [read more about using Plop in Banquet](~docs/plop.md~) and make your own custom templates.
+
+### Git Hooks with Husky
+
+Banquet also comes with pre-commit and pre-push hooks ready to use via Husky and [`lint-staged`](~https://github.com/okonet/lint-staged~). These are checks and commands run against staged code when you’re committing and pushing changes, respectively.
+
+Current defaults include linting with ESLint, formatting with Prettier, type checking with `tsc`, and testing any changed files, but you can add whatever customizations you like.
 
 ## License
 

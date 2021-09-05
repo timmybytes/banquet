@@ -11,7 +11,7 @@ A few defaults are already set up for you, and you can find them in the [`/src/t
 
 You can customize both global styles as well as individual components in the theme files. For scalability and per Chakra's recommendations, the overall theme is split into multiple files with different areas of focus, then imported into a central theme file.
 
-For example, here some global defaults are defined, including general link appearance and behavior with a short hover transition between colors. Notice some of the colors here are custom ones like `brand.gold`, which itself is defined in the `colors.ts` file.
+For example, here some global defaults are defined, including general link appearance and behavior with a short hover transition between colors. Notice some of the colors here are custom ones like `brand.primary`, which itself is defined in the `colors.ts` file.
 
 ```ts
 // src/theme/styles.ts
@@ -32,7 +32,7 @@ export const styles = {
       fontFamily: 'Menlo, monospace',
       fontSize: '1rem',
       background: 'gray.900',
-      color: 'brand.gold',
+      color: 'brand.primary',
       borderRadius: '4px',
       padding: '2px 4px',
     },

@@ -5,13 +5,14 @@ import React from 'react'
 export const FeaturesSection = (): React.ReactElement => {
   return (
     <Section
-      p='2rem'
-      d='flex'
-      pt='5rem'
-      flexDirection='column'
-      justifyContent='center'
-      alignItems='center'
-      w='100%'
+      sx={{
+        d: 'flex',
+        pt: '5rem',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        w: '100%',
+      }}
       id='features'>
       <Box
         p={{ base: '0', md: '2rem' }}
@@ -28,7 +29,7 @@ export const FeaturesSection = (): React.ReactElement => {
           maxW='30ch'
           fontWeight='200'
           textTransform='uppercase'
-          color='brand.gold'
+          color='brand.primary'
           textShadow='.25px .25px 0 #3c3c3c'>
           Features
         </Text>
