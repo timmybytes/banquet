@@ -55,7 +55,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Adding your own metadata
 
-Use the various objects in [`SiteData`](./src/data/SiteData) to update Banquet with your own information, including data for site metadata, `header` and `footer` links, and information for the homepage’s `Hero` component.
+Use the various objects in [`SiteData`](./src/data/SiteData.tsx) to update Banquet with your own information, including data for site metadata, `header` and `footer` links, and information for the homepage’s `Hero` component.
 
 The `CustomHead` component adds a variety of `meta` tags and [Open Graph](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website/) information for personalizing Banquet for your own needs, including link sharing data and images, favicons, icons, and more.
 
@@ -97,7 +97,7 @@ Banquet includes a `.nvmrc` file to enforce using the active [LTS of Node](https
 
 ### Chakra UI and global theming
 
-Banquet uses Chakra UI as a component library with a few presets. [Theming with Chakra is straightforward](https://chakra-ui.com/docs/theming/customize-theme), and can be updated with your own preferences. In `src/pages/_app.tsx`, the Chakra Provider wraps the overall app (as well as a custom `Layout` component that will wrap all pages by default), and aside from[Chakra’s own defaults](https://chakra-ui.com/docs/theming/theme), adds a few settings via a `theme` object imported from `src/theme/index.ts`.
+Banquet uses Chakra UI as a component library with a few presets. [Theming with Chakra is straightforward](https://chakra-ui.com/docs/theming/customize-theme), and can be updated with your own preferences. In `src/pages/_app.tsx`, the Chakra Provider wraps the overall app (as well as a custom `Layout` component that will wrap all pages by default), and aside from [Chakra’s own defaults](https://chakra-ui.com/docs/theming/theme), adds a few settings via a `theme` object imported from `src/theme/index.ts`.
 
 Theme files, [per Chakra’s own recommendations](https://chakra-ui.com/docs/theming/customize-theme#scaling-out-your-project), are split into `colors.ts`, `fonts.ts`, etc., to allow for scalability, but exported together from the theme `index.ts` file. These include some custom global styles, fonts, and colors for Banquet’s own design scheme, but you can simply substitute your own preferences here.
 
