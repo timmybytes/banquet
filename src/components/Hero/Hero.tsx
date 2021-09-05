@@ -54,7 +54,7 @@ export const Hero = ({
         <CTAButton
           link={ctaLink}
           label={ctaLabel}
-          color='brand.gold'
+          color='brand.primary'
           bgColor='brand.dark'
         />
         <Text

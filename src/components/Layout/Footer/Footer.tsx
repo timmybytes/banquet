@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react'
-import { FOOTER_DATA } from '@components/Meta'
+import { FOOTER_DATA } from '@data/SiteData'
 
 export const Footer = (): React.ReactElement => {
   return (

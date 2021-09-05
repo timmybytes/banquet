@@ -6,6 +6,7 @@ module.exports = {
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
     '@test/(.*)$': '<rootDir>/test/$1',
     '@components/(.*)$': '<rootDir>/src/components/$1',
+    '@data/(.*)$': '<rootDir>/src/data/$1',
   },
   testEnvironment: 'jsdom',
   transformIgnorePatterns: ['<rootDir>/node_modules/'],

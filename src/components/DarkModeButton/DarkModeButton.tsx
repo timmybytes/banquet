@@ -3,7 +3,7 @@ import { Button, useColorMode } from '@chakra-ui/react'
 
 type DarkModeButtonProps = {
   children?: React.ReactNode
-  sx?: any
+  sx?: Record<string, unknown>
 }
 
 export const DarkModeButton = ({
@@ -14,7 +14,7 @@ export const DarkModeButton = ({
   return (
     <Button
       bg={'none'}
-      color={colorMode === 'light' ? 'brand.dark' : 'brand.gold'}
+      color={colorMode === 'light' ? 'brand.dark' : 'brand.primary'}
       borderRadius='full'
       p={0}
       onClick={toggleColorMode}

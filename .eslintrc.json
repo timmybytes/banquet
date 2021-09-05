@@ -8,13 +8,13 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "ignorePatterns": ["plopfile.js", "jest.config.js"],
+  "ignorePatterns": ["plopfile.js", "jest.config.js", "next.config.js"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],

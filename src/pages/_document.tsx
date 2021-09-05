@@ -1,5 +1,5 @@
 import { ColorModeScript } from '@chakra-ui/react'
-import { MetaHead } from '@components/Meta'
+import { CustomHead } from '@components/CustomHead'
 import { theme } from '@theme/index'
 import Document, {
   DocumentContext,
@@ -16,13 +16,11 @@ class MyDocument extends Document {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
-
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  render() {
+  render(): React.ReactElement {
     return (
       <Html>
         <Head>
-          <MetaHead />
+          <CustomHead />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
