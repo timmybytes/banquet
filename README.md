@@ -19,111 +19,18 @@
 
 <!-- Main Content -->
 
-## Contents
-
-- [About](#about)
-  - [Structure](#structure)
-  - [Chakra UI](#️chakra-ui)
-  - [Plop.js](#bake-new-components-pages-etc-with-plopjs)
-  - [Other Features](#other-features)
-- [Getting Started](#getting-started)
-- [Customizing](#customizing)
-- [License](./LICENSE)
-
 ## About
 
-Banquet is an opinionated starter + boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but Banquet front-loads more tools and configurations as defaults with less tinkering required.
+Banquet is an opinionated starter + boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but Banquet front-loads many useful tools and configurations as defaults with less tinkering required.
 
 Banquet comes with the following out of the box:
 
-- Modern React: [Next.js](https//nextjs.org) + [TypeScript](https://www.typescriptlang.org/)
-- Robust UI: [Chakra UI](https://chakra-ui.com/) + [React Icons](https://github.com/react-icons/react-icons) included
-- Flexible styling: Support for [CSS Modules](https://github.com/css-modules/css-modules) with SCSS/SASS
+- Modern React developement: [Next.js](https//nextjs.org) + [TypeScript](https://www.typescriptlang.org/)
+- Robust UI library: [Chakra UI](https://chakra-ui.com/) + [React Icons](https://github.com/react-icons/react-icons) included
+- Flexible styling: Support for [CSS Modules](https://github.com/css-modules/css-modules) with SCSS/SASS and/or inline-styling with Chakra
 - Testing defaults: [Jest](https://github.com/facebook/jest) + [React Testing Library](https://github.com/testing-library/react-testing-library)
 - Customizable templating: [Plop.js](https://github.com/plopjs/plop) code generator
-- CI/CD: Pre-commit and pre-push hooks with [Husky](https://github.com/typicode/husky) and [`lint-staged`](https://github.com/okonet/lint-staged)
-
-### Structure
-
-Banquet follows a common React project style:
-
-```bash
-public/
-src/
-  assets/
-  components/
-    SomeComponent/
-      SubComponent/
-      SomeComponent.tsx
-      SomeComponent.test.tsx
-      SomeComponent.module.scss
-      index.ts
-  pages/
-    _app.tsx
-    index.tsx
-  styles/
-    _globals.scss
-  utils/
-  ...
-```
-
-This differs a little from the initial Next.js structure, which doesn't use a `src` directory by default, but is still [fully compatible with all of Next's features](https://nextjs.org/docs/advanced-features/src-directory).
-
-Components are kept in their own directories with related files and a root `index.ts` for easy imports/exports, and when creating new components and pages with [`yarn bake`](./docs/plop.md), the same structure is followed by default.
-
-Banquet also uses a basic custom `Layout` component to wrap all pages, and includes a `Header/Nav` and `Footer` component. When creating new pages, you can forgo having to manually add a header/footer, and simply add your desired page content; it will be automatically wrapped with the given layout.
-
-### Chakra UI + React Icons
-
-Banquet also includes [Chakra UI](https://chakra-ui.com/) and [React Icons](https://github.com/react-icons/react-icons) for flexible, accessible, and easy to use UI components and hooks. And with Chakra’s theme provider, it’s easy to define default colors, sizes, fonts, etc., and access them from anywhere in your project.
-
-[Read more about using Chakra in Banquet](docs/chakra.md)
-
-### Plop.js: Bake new components, pages, etc.
-
-Banquet comes with a `bake` command to invoke a CLI code generator called [Plop](https://plopjs.com). You can use it to add new components, tests, pages, etc., based on the included [Handlebars.js-style](https://handlebarsjs.com/guide/) templates—or create ones yourself!
-
-The included templates can generate:
-
-- A new `tsx` component with accompanying `.test`, `.scss`, and `index.ts` files inside their own directory in `src/components`
-- _Only_ a `.tsx` component inside its own directory in `src/components`
-- A new page inside `src/pages`
-
-To use it, run `yarn bake` from the terminal, and choose from the options available, or [read more about using Plop in Banquet](docs/plop.md) and make your own custom templates.
-
-### Other Features
-
-#### Path Aliasing
-
-Banquet comes pre-configured with path aliasing for simplified imports during development. From `tsconfig.json`, you can customize or add to the predefined paths:
-
-```json
-"@components/*": ["src/components/*"],
-"@pages/*": ["src/pages/*"],
-"@hooks/*": ["hooks/*"],
-"@public/*": ["public/*"],
-"@test/*": ["test/*"],
-"@styles/*": ["src/styles/*"],
-"@utils/*": ["src/utils/*"],
-"@/*": ["src/*"]
-```
-
-When importing components, hooks, etc., use the aliases to avoid having to resolve full paths. For example:
-
-```tsx
-// ExampleComponent.tsx
-
-import { SignInPopup } from ‘@components/SignInPopup’;
-
-export const SignInWrapper = () => ( <SignInPopup /> );
-
-```
-
-#### CI Checks With Husky
-
-Banquet also comes with pre-commit and pre-push hooks ready to use via Husky and [`lint-staged`](https://github.com/okonet/lint-staged). These are checks and commands run against staged code when you’re committing and pushing changes, respectively.
-
-Current defaults include linting with ESLint, formatting with Prettier, and type checking with `tsc`, but you can add whatever customizations you like.
+- Pre-commit and pre-push hooks with [Husky](https://github.com/typicode/husky) and [`lint-staged`](https://github.com/okonet/lint-staged), including linting, formatting, type checking, and testing
 
 ## Getting Started
 
@@ -148,7 +55,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Adding your own metadata
 
-Use the various objects in [`SiteData`](src/data/SiteData) to update Banquet with your own information, including data for site metadata, `header` and `footer` links, and information for the homepage’s `Hero` component.
+Use the various objects in [`SiteData`](./src/data/SiteData) to update Banquet with your own information, including data for site metadata, `header` and `footer` links, and information for the homepage’s `Hero` component.
 
 The `CustomHead` component adds a variety of `meta` tags and [Open Graph](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website/) information for personalizing Banquet for your own needs, including link sharing data and images, favicons, icons, and more.
 
@@ -193,6 +100,8 @@ Banquet includes a `.nvmrc` file to enforce using the active [LTS of Node](https
 Banquet uses Chakra UI as a component library with a few presets. [Theming with Chakra is straightforward](https://chakra-ui.com/docs/theming/customize-theme), and can be updated with your own preferences. In `src/pages/_app.tsx`, the Chakra Provider wraps the overall app (as well as a custom `Layout` component that will wrap all pages by default), and aside from[Chakra’s own defaults](https://chakra-ui.com/docs/theming/theme), adds a few settings via a `theme` object imported from `src/theme/index.ts`.
 
 Theme files, [per Chakra’s own recommendations](https://chakra-ui.com/docs/theming/customize-theme#scaling-out-your-project), are split into `colors.ts`, `fonts.ts`, etc., to allow for scalability, but exported together from the theme `index.ts` file. These include some custom global styles, fonts, and colors for Banquet’s own design scheme, but you can simply substitute your own preferences here.
+
+[Read more about using Chakra in Banquet](docs/chakra.md)
 
 ### Fonts
 
