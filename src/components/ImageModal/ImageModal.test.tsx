@@ -3,6 +3,6 @@ import { ImageModal } from './ImageModal'
 
 describe('ImageModal', () => {
   it('should render', () => {
-    render(<ImageModal />)
+    render(<ImageModal image='https://source.unsplash.com/random' />)
   })
 })
