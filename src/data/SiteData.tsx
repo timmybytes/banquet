@@ -48,8 +48,8 @@ export const HEADER_LINKS = [
     title: 'Features',
   },
   {
-    href: '#examples',
-    title: 'Examples',
+    href: '#getting-started',
+    title: 'Getting Started',
   },
   {
     href: 'https://github.com/timmybytes/banquet',

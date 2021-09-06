@@ -1,4 +1,4 @@
-import { Box, Image, Stack, Text, useDisclosure } from '@chakra-ui/react'
+import { Box, Grid, Image, Stack, Text } from '@chakra-ui/react'
 import { ImageModal } from '@components/ImageModal'
 import { Article, Section } from '@components/Layout'
 import React from 'react'
@@ -11,8 +11,6 @@ export const ExamplesSection = ({
   children,
   ...rest
 }: ExamplesSectionProps): React.ReactElement => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
   return (
     <Section
       sx={{
@@ -23,7 +21,7 @@ export const ExamplesSection = ({
         alignItems: 'center',
         w: '100%',
       }}
-      id='examples'
+      id='getting-started'
       {...rest}>
       <Box
         p={{ base: '0', md: '2rem' }}
@@ -42,16 +40,15 @@ export const ExamplesSection = ({
           textTransform='uppercase'
           color='brand.primary'
           textShadow='.25px .25px 0 #3c3c3c'>
-          Examples
+          Getting Started
         </Text>
       </Box>
-      <Box
-        display='grid'
+      <Grid
         gridTemplateColumns={{ base: '1fr', md: 'auto auto' }}
         gridGap={10}
         justifyItems='stretch'
         justifyContent='center'
-        alignItems='center'>
+        alignItems='flex-start'>
         <Stack direction={{ base: 'column', md: 'row' }}>
           <Article
             heading='Fast Setup'
@@ -62,15 +59,8 @@ export const ExamplesSection = ({
               code creation, linting/formatting, testing, and customizing the
               theme to your tastes.'>
             <ImageModal
-              image={
-                <Image
-                  size='100%'
-                  rounded='1rem'
-                  shadow='2xl'
-                  src='/assets/images/clone.png'
-                  onClick={onOpen}
-                />
-              }
+              header='Getting Started'
+              image='/assets/images/clone.png'
             />
           </Article>
         </Stack>
@@ -83,15 +73,9 @@ export const ExamplesSection = ({
               links, among other data.
             </Text>
             <ImageModal
-              image={
-                <Image
-                  size='100%'
-                  objectFit='cover'
-                  rounded='1rem'
-                  shadow='2xl'
-                  src='/assets/images/header.png'
-                />
-              }
+              header='SiteData'
+              body='Update metadata site-wide by editing the SiteData (src/data/SiteData.tsx) file'
+              image='/assets/images/header.png'
             />
           </Article>
         </Stack>
@@ -129,7 +113,7 @@ export const ExamplesSection = ({
             src='https://source.unsplash.com/random/600x400'
           />
         </Stack>
-      </Box>
+      </Grid>
       {children}
     </Section>
   )

@@ -107,14 +107,14 @@ const MenuDrawer = () => {
         <DrawerContent bg={colorMode === 'light' ? 'white' : 'gray.800'}>
           <DrawerCloseButton />
 
-          <DrawerBody pt={10}>
+          <DrawerBody pt={10} onClick={onClose}>
             <DarkModeButton
               sx={{
                 color: 'brand.dark',
                 background: 'brand.primary',
               }}
             />
-            <Links onClose={onClose} />
+            <Links />
           </DrawerBody>
 
           <DrawerFooter justifyContent='center'>
