@@ -61,7 +61,7 @@ The `CustomHead` component adds a variety of `meta` tags and [Open Graph](https:
 
 ### Components and basic config
 
-Banquet follows a familiar React project structure, with a few caveats. Most config files are located in the root directory, including those for `jest`, `eslint`, `prettier`, `next`, and `typescript`, among other. The `src` directory holds `assets`, `components`, `data`, `pages`, and `theme` files. You can rearrange these however you like, but keep in mind because Banquet is a Next app, [there are specific ways in which the `pages` directory files must be laid out](https://nextjs.org/docs/basic-features/pages).
+Banquet follows a familiar React project structure, with a few caveats. Most config files are located in the root directory, including those for `jest`, `eslint`, `prettier`, `next`, and `typescript`, among others. The `src` directory holds `assets`, `components`, `data`, `pages`, and `theme` files. You can rearrange these however you like, but keep in mind because Banquet is a Next app, [there are specific ways in which the `pages` directory files must be laid out](https://nextjs.org/docs/basic-features/pages).
 
 In most cases, components are grouped together with a default index and test file.
 
