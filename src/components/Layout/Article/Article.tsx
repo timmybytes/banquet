@@ -5,7 +5,7 @@ type ArticleProps = {
   body?: string
   children?: React.ReactNode
 }
-// Testing
+
 export const Article = ({
   children,
   heading,

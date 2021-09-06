@@ -12,14 +12,14 @@ export const SITE_DATA = {
   color: '#e9c46a',
   repo: 'https://github.com/timmybytes/banquet',
   url: 'banquet-starter.netlify.app',
-  img: 'banquet-card.png', // For Open Graph link preview, NOTE - SVG is not supported
+  img: 'assets/banquet-card.png', // For Open Graph link preview, NOTE - SVG is not supported
 }
 
 export const HERO_DATA = {
   heading: 'A Next.js starter to satisfy your development cravings',
   subheading:
     'Banquet is configured for an excellent developer experience, and includes a feast of tooling and presets for building on the modern web.',
-  image: 'images/cody-chan-GXhmQt6MFX8-unsplash.jpg',
+  image: 'assets/images/cody-chan-GXhmQt6MFX8-unsplash.jpg',
   ctaLink: 'https://github.com/timmybytes/banquet',
   ctaLabel: 'Fork on GitHub',
   smallText: (

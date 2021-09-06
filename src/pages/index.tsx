@@ -1,5 +1,6 @@
 import { Box, Text } from '@chakra-ui/react'
 import { CTAButton } from '@components/CTAButton'
+import { ExamplesSection } from '@components/ExamplesSection'
 import { FeaturesSection } from '@components/FeaturesSection'
 import { Hero } from '@components/Hero'
 import { Section } from '@components/Layout/Section'
@@ -18,6 +19,7 @@ export default function Home(): React.ReactNode {
         smallText={HERO_DATA.smallText}
       />
       <FeaturesSection />
+      <ExamplesSection />
       <Section
         sx={{
           py: '2rem',
