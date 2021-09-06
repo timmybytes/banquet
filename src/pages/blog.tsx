@@ -1,8 +1,9 @@
 import { Box, Heading, Text } from '@chakra-ui/react'
-import { Post } from '@components/LayoutComponents/Post'
+import { Post } from '@components/Post'
 import React from 'react'
-export default function Blog() {
+export default function Blog(): React.ReactNode {
   return (
+    // TODO: Temporary layout styles until there are blog posts to pull in; then set up a grid-based layout
     <Box maxW={{ base: '100%', lg: '85ch' }}>
       <Heading py={8}>Blog</Heading>
       <Text py={4}>
