@@ -23,7 +23,7 @@ export const ExamplesSection = ({
         alignItems: 'center',
         w: '100%',
       }}
-      id='features'
+      id='examples'
       {...rest}>
       <Box
         p={{ base: '0', md: '2rem' }}
