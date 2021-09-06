@@ -70,29 +70,29 @@ export const ExamplesSection = ({
               Banquet follows a familiar React project structure, with a few
               caveats. Most config files are located in the root directory,
               including those for:
-              <List my={2}>
-                <ListItem>
-                  <ListIcon as={SiJest} />
-                  <code>jest</code>
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={SiEslint} />
-                  <code>eslint</code>
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={SiPrettier} />
-                  <code>prettier</code>
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={SiNextDotJs} />
-                  <code>next</code>
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={SiTypescript} />
-                  <code>typescript</code>
-                </ListItem>
-              </List>
             </Text>
+            <List my={2}>
+              <ListItem>
+                <ListIcon as={SiJest} />
+                <code>jest</code>
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiEslint} />
+                <code>eslint</code>
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiPrettier} />
+                <code>prettier</code>
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiNextDotJs} />
+                <code>next</code>
+              </ListItem>
+              <ListItem>
+                <ListIcon as={SiTypescript} />
+                <code>typescript</code>
+              </ListItem>
+            </List>
             <Text my={2}>
               The <code>src</code> directory holds <code>assets</code>,{' '}
               <code>components</code>, <code>data</code>, <code>pages</code>,

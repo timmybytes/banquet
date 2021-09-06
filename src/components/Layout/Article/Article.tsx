@@ -25,8 +25,10 @@ export const Article = ({
       </Text>
       <Text m='1rem 0' maxW='65ch' fontSize='lg' opacity='0.8' lineHeight={1.5}>
         {body}
-        {children}
       </Text>
+      <Box m='1rem 0' maxW='65ch' fontSize='lg' opacity='0.8' lineHeight={1.5}>
+        {children}
+      </Box>
     </Box>
   )
 }
