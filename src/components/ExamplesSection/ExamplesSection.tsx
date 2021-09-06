@@ -1,21 +1,7 @@
-import {
-  Box,
-  Image,
-  List,
-  ListIcon,
-  ListItem,
-  Stack,
-  Text,
-} from '@chakra-ui/react'
+import { Box, Image, Stack, Text, useDisclosure } from '@chakra-ui/react'
+import { ImageModal } from '@components/ImageModal'
 import { Article, Section } from '@components/Layout'
 import React from 'react'
-import {
-  SiEslint,
-  SiJest,
-  SiNextDotJs,
-  SiPrettier,
-  SiTypescript,
-} from 'react-icons/si'
 
 type ExamplesSectionProps = {
   children?: React.ReactNode
@@ -25,6 +11,8 @@ export const ExamplesSection = ({
   children,
   ...rest
 }: ExamplesSectionProps): React.ReactElement => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <Section
       sx={{
@@ -58,77 +46,54 @@ export const ExamplesSection = ({
         </Text>
       </Box>
       <Box
-        // display='grid'
+        display='grid'
         gridTemplateColumns={{ base: '1fr', md: 'auto auto' }}
         gridGap={10}
         justifyItems='stretch'
         justifyContent='center'
         alignItems='center'>
         <Stack direction={{ base: 'column', md: 'row' }}>
-          <Article heading='Fast setup & easy configuration.'>
-            <Text my={2}>
-              Banquet follows a familiar React project structure, with a few
-              caveats. Most config files are located in the root directory,
-              including those for:
-            </Text>
-            <List my={2}>
-              <ListItem>
-                <ListIcon as={SiJest} />
-                <code>jest</code>
-              </ListItem>
-              <ListItem>
-                <ListIcon as={SiEslint} />
-                <code>eslint</code>
-              </ListItem>
-              <ListItem>
-                <ListIcon as={SiPrettier} />
-                <code>prettier</code>
-              </ListItem>
-              <ListItem>
-                <ListIcon as={SiNextDotJs} />
-                <code>next</code>
-              </ListItem>
-              <ListItem>
-                <ListIcon as={SiTypescript} />
-                <code>typescript</code>
-              </ListItem>
-            </List>
-            <Text my={2}>
-              The <code>src</code> directory holds <code>assets</code>,{' '}
-              <code>components</code>, <code>data</code>, <code>pages</code>,
-              and <code>theme</code> files. You can rearrange these however you
-              like, but keep in mind because Banquet is a Next app,{' '}
-              <a href='https://nextjs.org/docs/basic-features/pages'>
-                there are specific ways in which the <code>pages</code>{' '}
-                directory files must be laid out
-              </a>
-              .
-            </Text>
+          <Article
+            heading='Fast Setup'
+            body='Getting started with Banquet is easy: just clone the code and
+              install dependencies. Use the site (the one you’re currently
+              reading!) as a template, or delete the pre-made content and create
+              your own from scratch. Useful presets are already in place for
+              code creation, linting/formatting, testing, and customizing the
+              theme to your tastes.'>
+            <ImageModal
+              image={
+                <Image
+                  size='100%'
+                  rounded='1rem'
+                  shadow='2xl'
+                  src='/assets/images/clone.png'
+                  onClick={onOpen}
+                />
+              }
+            />
           </Article>
-          <Image
-            size='100%'
-            // objectFit='cover'
-            rounded='1rem'
-            shadow='2xl'
-            src='https://source.unsplash.com/random/600x400'
-          />
         </Stack>
         <Stack>
-          <Article heading='Fast setup & easy configuration.'>
+          <Article heading='Easy Customization'>
             <Text>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit,
-              iste autem? Nisi natus laborum, nam pariatur in numquam voluptates
-              quas possimus, soluta doloremque, culpa quia saepe ut. Ab, ducimus
-              neque.
+              You can use the <code>SiteData</code> file to easily pass your own
+              metadata down to the rest of the site, update site name and
+              description, add Open Graph link previews, and add your own header
+              links, among other data.
             </Text>
+            <ImageModal
+              image={
+                <Image
+                  size='100%'
+                  objectFit='cover'
+                  rounded='1rem'
+                  shadow='2xl'
+                  src='/assets/images/header.png'
+                />
+              }
+            />
           </Article>
-          <Image
-            size='100%'
-            objectFit='cover'
-            rounded='1rem'
-            shadow='2xl'
-            src='https://source.unsplash.com/random/600x400'
-          />
         </Stack>
         <Stack>
           <Article heading='Fast setup & easy configuration.'>
