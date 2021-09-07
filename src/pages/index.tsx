@@ -1,7 +1,7 @@
 import { Box, Text } from '@chakra-ui/react'
 import { CTAButton } from '@components/CTAButton'
-import { ExamplesSection } from '@components/ExamplesSection'
 import { FeaturesSection } from '@components/FeaturesSection'
+import { GettingStartedSection } from '@components/GettingStartedSection'
 import { Hero } from '@components/Hero'
 import { Section } from '@components/Layout/Section'
 import { HERO_DATA, SITE_DATA } from '@data/SiteData'
@@ -19,7 +19,7 @@ export default function Home(): React.ReactNode {
         smallText={HERO_DATA.smallText}
       />
       <FeaturesSection />
-      <ExamplesSection />
+      <GettingStartedSection />
       <Section
         sx={{
           py: '2rem',
