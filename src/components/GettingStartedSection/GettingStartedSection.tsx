@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Text } from '@chakra-ui/react'
+import { Box, Code, Grid, Stack, Text } from '@chakra-ui/react'
 import { ImageModal } from '@components/ImageModal'
 import { Article, Section } from '@components/Layout'
 import React from 'react'
@@ -44,7 +44,10 @@ export const GettingStartedSection = ({
         </Text>
       </Box>
       <Grid
-        gridTemplateColumns={{ base: '1fr', md: 'auto auto' }}
+        gridTemplateColumns={{
+          base: '1fr',
+          md: '1fr 1fr ',
+        }}
         gridGap={10}
         justifyItems='stretch'
         justifyContent='center'
@@ -62,6 +65,23 @@ export const GettingStartedSection = ({
               header='Getting Started'
               image='/assets/images/clone.webp'
             />
+            <Code
+              colorScheme='gray.800'
+              overflowX='scroll'
+              fontWeight='bold'
+              whiteSpace='nowrap'
+              p={6}
+              rounded='lg'>
+              git clone https://github.com/timmybytes/banquet.git
+              <br />
+              cd banquet
+              <br />
+              yarn
+              <Text as='span' color='gray.400'>
+                {' '}
+                # or npm install
+              </Text>
+            </Code>
           </Article>
         </Stack>
         <Stack>
