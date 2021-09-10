@@ -13,7 +13,7 @@ export const Article = ({
   ...rest
 }: ArticleProps): React.ReactElement => {
   return (
-    <Box p={{ base: '0', md: '1rem' }} {...rest}>
+    <Box p={{ base: '0', md: '1rem' }} {...rest} maxW='fit-content'>
       <Text
         as='h3'
         my='1rem'

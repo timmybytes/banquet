@@ -1,4 +1,5 @@
-import { Box, Code, Grid, Stack, Text } from '@chakra-ui/react'
+import { Box, Grid, Stack, Text } from '@chakra-ui/react'
+import { CodeBlock } from '@components/CodeBlock'
 import { ImageModal } from '@components/ImageModal'
 import { Article, Section } from '@components/Layout'
 import React from 'react'
@@ -61,17 +62,7 @@ export const GettingStartedSection = ({
               your own from scratch. Useful presets are already in place for
               code creation, linting/formatting, testing, and customizing the
               theme to your tastes.'>
-            <ImageModal
-              header='Getting Started'
-              image='/assets/images/clone.webp'
-            />
-            <Code
-              colorScheme='gray.800'
-              overflowX='scroll'
-              fontWeight='bold'
-              whiteSpace='nowrap'
-              p={6}
-              rounded='lg'>
+            <CodeBlock>
               git clone https://github.com/timmybytes/banquet.git
               <br />
               cd banquet
@@ -81,7 +72,7 @@ export const GettingStartedSection = ({
                 {' '}
                 # or npm install
               </Text>
-            </Code>
+            </CodeBlock>
           </Article>
         </Stack>
         <Stack>
@@ -107,7 +98,7 @@ export const GettingStartedSection = ({
                 <code>Plop.js</code>
               </a>{' '}
               to create new code from premade templates, with related tests,
-              styles, and exports.
+              styles, and exports. See examples below.
             </Text>
             <ImageModal
               header='SiteData'
@@ -127,18 +118,40 @@ export const GettingStartedSection = ({
           </Article>
         </Stack>
         <Stack>
-          <Article heading='Fast setup & easy configuration.'>
+          <Article heading='Automate Your Code Checks'>
             <Text>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit,
-              iste autem? Nisi natus laborum, nam pariatur in numquam voluptates
-              quas possimus, soluta doloremque, culpa quia saepe ut. Ab, ducimus
-              neque.
+              Banquet comes with{' '}
+              <a
+                href='https://typicode.github.io/husky/#/'
+                rel='noopener noreferrer'
+                target='_blank'>
+                Husky
+              </a>{' '}
+              built-in. Husky makes configuring Git Hooks easy, and allows you
+              to automate scripts or processes before you commit, push, etc. By
+              default, Banquet's hooks are:
             </Text>
-            <ImageModal
-              header='SiteData'
-              body='Update metadata site-wide by editing the SiteData (src/data/SiteData.tsx) file'
-              image='https://source.unsplash.com/random/600x400'
-            />
+            <Box as='ul'>
+              <Text as='li' my={4}>
+                <Text as='span' fontWeight='700'>
+                  Pre-Commit:
+                </Text>{' '}
+                Runs ESLint, Prettier, and any tests related to files that are
+                staged, based on configurations at the root of the project.
+              </Text>
+              <Text as='li' my={4}>
+                <Text as='span' fontWeight='700'>
+                  Pre-Push:
+                </Text>{' '}
+                Runs type-checking for all relevant TypeScript files, based on
+                configurations at the root of the project.
+              </Text>
+            </Box>
+            <Text>
+              These automated checks will help catch errors and warnings before
+              your code leaves your machine, and add a consistent framework for
+              larger teams to work from.
+            </Text>
           </Article>
         </Stack>
       </Grid>
