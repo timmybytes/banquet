@@ -14,7 +14,7 @@ export const styles = {
     code: {
       fontFamily: 'Menlo, monospace',
       fontSize: '1rem',
-      background: 'gray.700',
+      bg: 'gray.700',
       color: 'white',
       borderRadius: '4px',
       padding: '2px 4px',

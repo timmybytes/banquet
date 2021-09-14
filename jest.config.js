@@ -7,6 +7,7 @@ module.exports = {
     '@test/(.*)$': '<rootDir>/test/$1',
     '@components/(.*)$': '<rootDir>/src/components/$1',
     '@data/(.*)$': '<rootDir>/src/data/$1',
+    '@/(.*)$': '<rootDir>/src/$1',
   },
   testEnvironment: 'jsdom',
   transformIgnorePatterns: ['<rootDir>/node_modules/'],

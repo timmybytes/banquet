@@ -36,7 +36,7 @@ export const ImageModal = ({
   const { colorMode } = useColorMode()
   const [isHovered, setIsHovered] = useState(false)
   return (
-    <Box {...rest}>
+    <Box>
       <Box
         onClick={onOpen}
         my={4}
@@ -54,6 +54,7 @@ export const ImageModal = ({
           rounded='lg'
           shadow='2xl'
           transition='.3s'
+          {...rest}
         />
         <SlideFade in={isHovered}>
           <Box

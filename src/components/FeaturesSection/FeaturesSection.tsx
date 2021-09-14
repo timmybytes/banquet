@@ -1,10 +1,28 @@
 import { Box, Grid, Text } from '@chakra-ui/react'
+import { Carousel } from '@components/Carousel'
 import { CodeBlock } from '@components/CodeBlock'
 import { ImageModal } from '@components/ImageModal'
 import { Article, Section } from '@components/Layout'
 import React from 'react'
 
 export const FeaturesSection = (): React.ReactElement => {
+  const slides = [
+    {
+      img: 'https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      img: 'https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      img: 'https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+    },
+    {
+      img: 'https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+    {
+      img: 'https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+  ]
   return (
     <Section
       sx={{
@@ -133,6 +151,13 @@ export const FeaturesSection = (): React.ReactElement => {
             to create new code from premade templates, with related tests,
             styles, and exports. See examples below.
           </Text>
+          <Carousel
+            slides={[
+              { img: '/assets/images/bake1.webp' },
+              { img: '/assets/images/bake2.webp' },
+              { img: '/assets/images/bake3.webp' },
+            ]}
+          />
           <ImageModal
             header='SiteData'
             body='Update metadata site-wide by editing the SiteData (src/data/SiteData.tsx) file'
@@ -183,6 +208,7 @@ export const FeaturesSection = (): React.ReactElement => {
             your code leaves your machine, and add a consistent framework for
             larger teams to work from.
           </Text>
+          <Carousel slides={slides} />
         </Article>
       </Grid>
     </Section>
