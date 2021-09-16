@@ -19,7 +19,7 @@ export default function Home(): React.ReactNode {
         smallText={HERO_DATA.smallText}
       />
       <FeaturesSection />
-      <GettingStartedSection />
+      {/* <GettingStartedSection /> */}
       <Section
         sx={{
           py: '2rem',

@@ -158,7 +158,7 @@ export const FeaturesSection = (): React.ReactElement => {
               { img: '/assets/images/bake3.webp' },
             ]}
           />
-          <ImageModal
+          {/* <ImageModal
             header='SiteData'
             body='Update metadata site-wide by editing the SiteData (src/data/SiteData.tsx) file'
             image='/assets/images/bake1.webp'
@@ -172,7 +172,7 @@ export const FeaturesSection = (): React.ReactElement => {
             header='SiteData'
             body='Update metadata site-wide by editing the SiteData (src/data/SiteData.tsx) file'
             image='/assets/images/bake3.webp'
-          />
+          /> */}
         </Article>
         <Article heading='Automate Your Code Checks'>
           <Text>

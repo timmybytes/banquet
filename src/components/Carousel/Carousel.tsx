@@ -1,22 +1,45 @@
-import { Box, Flex, HStack, Text } from '@chakra-ui/react'
-import { ImageModal } from '@components/ImageModal'
+// Based on Choc-UI's Carousel
+import {
+  Box,
+  Flex,
+  HStack,
+  Image,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalOverlay,
+  Text,
+  useDisclosure,
+} from '@chakra-ui/react'
 import { useState } from 'react'
 import { IoArrowBackCircle, IoArrowForwardCircle } from 'react-icons/io5'
-
-// Based on Choc-UI's Carousel
 
 interface CarouselProps {
   slides: {
     img: string
   }[]
-  slidesCount?: number
 }
 
-export const Carousel = ({
-  slides,
-  // Fallback for undefined lengths
-  slidesCount = 1,
-}: CarouselProps): React.ReactElement => {
+export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const slidesCount = slides.length
+
+  const [slideModal, setSlideModal] = useState('')
+
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const prevSlide = () => {
+    setCurrentSlide(s => (s === 0 ? slidesCount - 1 : s - 1))
+  }
+  const nextSlide = () => {
+    setCurrentSlide(s => (s === slidesCount - 1 ? 0 : s + 1))
+  }
+  const setSlide = slide => {
+    setCurrentSlide(slide)
+  }
+
   const arrowStyles = {
     cursor: 'pointer',
     top: '50%',
@@ -33,25 +56,12 @@ export const Carousel = ({
     },
   }
 
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  const prevSlide = () => {
-    setCurrentSlide(s => (s === 0 ? slidesCount - 1 : s - 1))
-  }
-  const nextSlide = () => {
-    setCurrentSlide(s => (s === slidesCount - 1 ? 0 : s + 1))
-  }
-  const setSlide = slide => {
-    setCurrentSlide(slide)
-  }
-
   return (
     <Flex
       w='full'
       shadow='xl'
       my={2}
       alignItems='center'
-      // rounded='lg'
       justifyContent='center'>
       <Flex w='full' overflow='hidden' position='relative'>
         <Flex
@@ -61,29 +71,95 @@ export const Carousel = ({
           rounded='lg'>
           {Array.isArray(slides) &&
             slides.map((slide, idx) => (
-              <Box key={`slide-${idx}`} boxSize='full' flex='none' rounded='lg'>
-                {
-                  // Only show '1/2', etc., label when multiple slides are present
-                  slidesCount > 1 && (
-                    <Text
-                      color='white'
-                      fontSize='sm'
-                      fontWeight={800}
-                      p='8px 12px'
-                      pos='absolute'
-                      top='8px'>
-                      {idx + 1} / {slidesCount}
-                    </Text>
-                  )
-                }
-                {/* <Image
-                  src={'img' in slide ? slide['img'] : ''}
+              <>
+                <Box
+                  key={`slide-${idx}`}
                   boxSize='full'
-                  backgroundSize='cover'
+                  flex='none'
                   rounded='lg'
-                /> */}
-                <ImageModal image={'img' in slide ? slide['img'] : ''} />
-              </Box>
+                  onClick={onOpen}>
+                  {
+                    // Only show '1/2', etc., label when multiple slides are present
+                    slidesCount > 1 && (
+                      <Text
+                        color='white'
+                        fontSize='sm'
+                        fontWeight={800}
+                        p='8px 12px'
+                        pos='absolute'
+                        top='8px'>
+                        {idx + 1} / {slidesCount}
+                      </Text>
+                    )
+                  }
+                  <Image
+                    src={'img' in slide ? slide['img'] : ''}
+                    boxSize='full'
+                    backgroundSize='cover'
+                    rounded='lg'
+                    cursor='pointer'
+                    onClick={() => setSlideModal(slide['img'])}
+                  />
+                </Box>
+                <Modal
+                  isOpen={isOpen}
+                  onClose={onClose}
+                  size='6xl'
+                  motionPreset='slideInBottom'
+                  isCentered>
+                  <ModalOverlay />
+                  <ModalContent>
+                    <ModalCloseButton rounded='full' />
+                    <ModalBody p={6}>
+                      {/* FIXME: Fix flash between modal image slides */}
+                      {slidesCount > 1 && (
+                        <Text
+                          color='white'
+                          fontSize='sm'
+                          fontWeight={800}
+                          pt={6}
+                          pl={2}
+                          pos='absolute'
+                          top='0'>
+                          {currentSlide + 1} / {slidesCount}
+                        </Text>
+                      )}
+                      <Image
+                        src={slides[currentSlide].img}
+                        size='100%'
+                        rounded='lg'
+                        shadow='none'
+                        width='100%'
+                        height='auto'
+                        onClick={onClose}
+                      />
+                      {
+                        // Only show Previous/Next controls when multiple slides are present
+                        slidesCount > 1 && (
+                          <>
+                            <Text
+                              {...arrowStyles}
+                              position='absolute'
+                              left='0'
+                              pl={8}
+                              onClick={prevSlide}>
+                              <IoArrowBackCircle size='32px' />
+                            </Text>
+                            <Text
+                              {...arrowStyles}
+                              position='absolute'
+                              pr={8}
+                              right='0'
+                              onClick={nextSlide}>
+                              <IoArrowForwardCircle size='32px' />
+                            </Text>
+                          </>
+                        )
+                      }
+                    </ModalBody>
+                  </ModalContent>
+                </Modal>
+              </>
             ))}
         </Flex>
         {
