@@ -5,7 +5,7 @@ type ArticleProps = {
   body?: string
   children?: React.ReactNode
 }
-// Testing
+
 export const Article = ({
   children,
   heading,
@@ -13,7 +13,7 @@ export const Article = ({
   ...rest
 }: ArticleProps): React.ReactElement => {
   return (
-    <Box p={{ base: '0', md: '1rem' }} {...rest}>
+    <Box p={{ base: '0', md: '1rem' }} {...rest} maxW='fit-content'>
       <Text
         as='h3'
         my='1rem'
@@ -25,8 +25,10 @@ export const Article = ({
       </Text>
       <Text m='1rem 0' maxW='65ch' fontSize='lg' opacity='0.8' lineHeight={1.5}>
         {body}
-        {children}
       </Text>
+      <Box m='1rem 0' maxW='65ch' fontSize='lg' opacity='0.8' lineHeight={1.5}>
+        {children}
+      </Box>
     </Box>
   )
 }
