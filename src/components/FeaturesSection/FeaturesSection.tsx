@@ -1,6 +1,5 @@
-import { Box, Grid, Text } from '@chakra-ui/react'
+import { Box, Grid, Heading, Text } from '@chakra-ui/react'
 import { Carousel } from '@components/Carousel'
-import { CodeBlock } from '@components/CodeBlock'
 import { ImageModal } from '@components/ImageModal'
 import { Article, Section } from '@components/Layout'
 import React from 'react'
@@ -33,14 +32,16 @@ export const FeaturesSection = (): React.ReactElement => {
         alignItems: 'center',
         w: '100%',
       }}
-      id='features'>
+      id='features'
+    >
       <Box
         p={{ base: '0', md: '2rem' }}
         w='100%'
         d='flex'
         flexDirection='column'
         alignItems='center'
-        justifyContent='center'>
+        justifyContent='center'
+      >
         <Text
           as='h2'
           my='1rem'
@@ -50,30 +51,68 @@ export const FeaturesSection = (): React.ReactElement => {
           fontWeight='200'
           textTransform='uppercase'
           color='brand.primary'
-          textShadow='.25px .25px 0 #3c3c3c'>
+          textShadow='.25px .25px 0 #3c3c3c'
+        >
           Features
         </Text>
       </Box>
       <Grid
         display='grid'
         gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}
+        gridGap={10}
         justifyContent='center'
-        alignItems='start'>
+        alignItems='start'
+      >
         <Article
-          heading='Modern DX with Typescript + Next.js'
+          heading='Modern DX with Typescript, Next.js, Chakra UI & React Icons'
           body='Banquet is built with Next.js to deliver fast performance,
               variable routing, static and/or server rendering, and more. All
               pages and components are written in Typescript, allowing for a
               more robust development experience.
             '
-        />
-        <Article heading='Chakra UI & React Icons'>
-          Banquet also includes <a href='https://chakra-ui.com'>Chakra UI</a>{' '}
-          and{' '}
-          <a href='https://github.com/react-icons/react-icons'>React Icons</a>{' '}
-          for flexible, accessible, and easy to use UI components and hooks. And
-          with Chakra’s theme provider, it’s easy to define default colors,
-          sizes, fonts, etc., and access them from anywhere in your project.
+        >
+          <Text>
+            Banquet also includes <a href='https://chakra-ui.com'>Chakra UI</a>{' '}
+            and{' '}
+            <a href='https://github.com/react-icons/react-icons'>React Icons</a>{' '}
+            for flexible, accessible, and easy to use UI components and hooks.
+            And with Chakra’s theme provider, it’s easy to define default
+            colors, sizes, fonts, etc., and access them from anywhere in your
+            project.
+          </Text>
+        </Article>
+        <Article heading='Customized Components'>
+          <Text>
+            Banquet also adds custom components like an Image Modal and Carousel
+            not available in the core Chakra library. See examples below, and
+            click on the images to trigger the modals.
+          </Text>
+          <Grid gridTemplateColumns='1fr 1fr' gridGap='3rem'>
+            <Box>
+              <Heading
+                as='h3'
+                pt={6}
+                fontSize='2xl'
+                color='black'
+                textAlign='center'
+              >
+                Image Modal
+              </Heading>
+              <ImageModal image='/assets/images/cody-chan-GXhmQt6MFX8-unsplash.jpg' />
+            </Box>
+            <Box>
+              <Heading
+                as='h3'
+                pt={6}
+                fontSize='2xl'
+                color='black'
+                textAlign='center'
+              >
+                Carousel
+              </Heading>
+              <Carousel slides={slides} />
+            </Box>
+          </Grid>
         </Article>
         <Article
           heading='CSS Modules + SASS Support'
@@ -96,61 +135,7 @@ export const FeaturesSection = (): React.ReactElement => {
           <a href='https://handlebarsjs.com/guide/'>
             <code>.hbs</code>
           </a>{' '}
-          templates—or create ones yourself!
-        </Article>
-        <Article heading='Linting, Formatting, and Type-Checking with Husky'>
-          Banquet includes git hooks through{' '}
-          <a href='https://github.com/typicode/husky'>Husky</a> to ensure all
-          tests pass and all code is linted (with{' '}
-          <a href='https://eslint.org/'>ESLint</a>) and formatted (with{' '}
-          <a href='https://prettier.io/'>Prettier</a>) before you make a commit.
-          Type checking is then performed before any commit is pushed. These
-          options are more are easily customizable and can be adjusted to your
-          own needs.
-        </Article>
-        {/* FIXME: Integrate with above sections */}
-        <Article
-          heading='Fast Setup'
-          body='Getting started with Banquet is easy: just clone the code and
-              install dependencies. Use the site (the one you’re currently
-              reading!) as a template, or delete the pre-made content and create
-              your own from scratch. Useful presets are already in place for
-              code creation, linting/formatting, testing, and customizing the
-              theme to your tastes.'>
-          <CodeBlock>
-            git clone https://github.com/timmybytes/banquet.git
-            <br />
-            cd banquet
-            <br />
-            yarn
-            <Text as='span' color='gray.400'>
-              {' '}
-              # or npm install
-            </Text>
-          </CodeBlock>
-        </Article>
-        <Article heading='Easy Customization'>
-          <Text>
-            You can use the <code>SiteData</code> file to easily pass your own
-            metadata down to the rest of the site, update site name and
-            description, add Open Graph link previews, and add your own header
-            links, among other data.
-          </Text>
-          <ImageModal
-            header='SiteData'
-            body='Update metadata site-wide by editing the SiteData (src/data/SiteData.tsx) file'
-            image='/assets/images/header.webp'
-          />
-        </Article>
-        <Article heading='Build New Components and Pages in Seconds'>
-          <Text>
-            Use{' '}
-            <a href='https://www.plopjs.com'>
-              <code>Plop.js</code>
-            </a>{' '}
-            to create new code from premade templates, with related tests,
-            styles, and exports. See examples below.
-          </Text>
+          templates—or create ones yourself! See examples below.
           <Carousel
             slides={[
               { img: '/assets/images/bake1.webp' },
@@ -158,29 +143,15 @@ export const FeaturesSection = (): React.ReactElement => {
               { img: '/assets/images/bake3.webp' },
             ]}
           />
-          {/* <ImageModal
-            header='SiteData'
-            body='Update metadata site-wide by editing the SiteData (src/data/SiteData.tsx) file'
-            image='/assets/images/bake1.webp'
-          />
-          <ImageModal
-            header='SiteData'
-            body='Update metadata site-wide by editing the SiteData (src/data/SiteData.tsx) file'
-            image='/assets/images/bake2.webp'
-          />
-          <ImageModal
-            header='SiteData'
-            body='Update metadata site-wide by editing the SiteData (src/data/SiteData.tsx) file'
-            image='/assets/images/bake3.webp'
-          /> */}
         </Article>
-        <Article heading='Automate Your Code Checks'>
+        <Article heading='Linting, Formatting, and Type-Checking: Automated Code Checks with Husky'>
           <Text>
             Banquet comes with{' '}
             <a
               href='https://typicode.github.io/husky/#/'
               rel='noopener noreferrer'
-              target='_blank'>
+              target='_blank'
+            >
               Husky
             </a>{' '}
             built-in. Husky makes configuring Git Hooks easy, and allows you to
@@ -208,7 +179,6 @@ export const FeaturesSection = (): React.ReactElement => {
             your code leaves your machine, and add a consistent framework for
             larger teams to work from.
           </Text>
-          <Carousel slides={slides} />
         </Article>
       </Grid>
     </Section>
