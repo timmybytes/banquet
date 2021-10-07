@@ -24,22 +24,34 @@ export const Hero = ({
     <Flex
       align='center'
       justify={{ base: 'center', md: 'space-around', xl: 'space-between' }}
-      direction={{ base: 'column-reverse', md: 'row' }}
-      wrap='nowrap'
+      direction={{ base: 'column', lg: 'row-reverse' }}
       minH='70vh'
       px={8}
       mb={16}
       mt={{ base: '3rem', md: '0' }}
-      {...rest}>
+      {...rest}
+    >
+      <Box
+        flexBasis='50%'
+        d={{ base: 'block' }}
+        p={{ base: '1rem 0', md: 8 }}
+        w='100%'
+        minW='200px'
+        alignSelf={{ base: 'center' }}
+      >
+        <Image src={image} size='100%' rounded='1rem' shadow='lg' />
+      </Box>
       <Stack
         spacing={6}
-        align={['start', 'center', 'flex-start', 'flex-start']}
-        p={{ base: '0', md: '2rem' }}>
+        align='flex-start'
+        p={{ base: '0', md: '2rem' }}
+        flexBasis='50%'
+      >
         <Heading
           as='h1'
-          fontSize={{ base: '2rem', md: '3rem' }}
+          fontSize={{ base: '2rem', md: 'calc(1.5rem + 1.2vw)' }}
           fontWeight='700'
-          textAlign={['left', 'center', 'left', 'left']}>
+        >
           {heading}
         </Heading>
         <Text
@@ -48,7 +60,8 @@ export const Hero = ({
           opacity='0.8'
           fontWeight='normal'
           lineHeight={1.5}
-          textAlign={['left', 'center', 'left', 'left']}>
+          maxW='55ch'
+        >
           {subheading}
         </Text>
         <CTAButton
@@ -62,13 +75,11 @@ export const Hero = ({
           fontSize='xs'
           mt={2}
           textAlign='left'
-          opacity='0.6'>
+          opacity='0.6'
+        >
           {smallText}
         </Text>
       </Stack>
-      <Box d={{ base: 'none', md: 'block' }} w={{ base: '100%' }} p={8}>
-        <Image src={image} size='100%' rounded='1rem' shadow='2xl' />
-      </Box>
     </Flex>
   )
 }
