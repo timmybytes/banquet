@@ -12,7 +12,7 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { IoArrowBackCircle, IoArrowForwardCircle } from 'react-icons/io5'
 
 interface CarouselProps {
@@ -64,7 +64,8 @@ export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
           position='absolute'
           left='0'
           pl={2}
-          onClick={prevSlide}>
+          onClick={prevSlide}
+        >
           <IoArrowBackCircle size='32px' />
         </Text>
         <Text
@@ -72,7 +73,8 @@ export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
           position='absolute'
           pr={2}
           right='0'
-          onClick={nextSlide}>
+          onClick={nextSlide}
+        >
           <IoArrowForwardCircle size='32px' />
         </Text>
       </>
@@ -93,7 +95,8 @@ export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
             display='inline-block'
             transition='background-color 0.3s ease'
             _hover={{ bg: 'blackAlpha.800' }}
-            onClick={() => setSlide(slide)}></Box>
+            onClick={() => setSlide(slide)}
+          ></Box>
         ))}
       </HStack>
     )
@@ -110,7 +113,8 @@ export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
         fontWeight={800}
         p='8px 12px'
         pos='absolute'
-        top='8px'>
+        top='8px'
+      >
         {id + 1} / {slidesCount}
       </Text>
     )
@@ -123,23 +127,20 @@ export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
       shadow='xl'
       my={2}
       alignItems='center'
-      justifyContent='center'>
+      justifyContent='center'
+    >
       <Flex w='full' overflow='hidden' position='relative'>
         <Flex
           w='full'
           transition='all .4s'
           ml={`-${currentSlide * 100}%`}
-          rounded='lg'>
+          rounded='lg'
+        >
           {/* Array of images from props */}
           {Array.isArray(slides) &&
             slides.map((slide, idx) => (
-              <>
-                <Box
-                  key={`slide-${idx}`}
-                  boxSize='full'
-                  flex='none'
-                  rounded='lg'
-                  onClick={onOpen}>
+              <React.Fragment key={`slide-${idx}`}>
+                <Box boxSize='full' flex='none' rounded='lg' onClick={onOpen}>
                   {/* Label indicator for more than 1 image */}
                   {slidesCount > 1 && <SlideCountLabel id={currentSlide} />}
                   <Image
@@ -157,7 +158,8 @@ export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
                   onClose={onClose}
                   size='6xl'
                   motionPreset='slideInBottom'
-                  isCentered>
+                  isCentered
+                >
                   <ModalOverlay />
                   <ModalContent>
                     <ModalCloseButton rounded='full' />
@@ -185,7 +187,7 @@ export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
                     </ModalBody>
                   </ModalContent>
                 </Modal>
-              </>
+              </React.Fragment>
             ))}
         </Flex>
 

@@ -89,25 +89,13 @@ export const FeaturesSection = (): React.ReactElement => {
           </Text>
           <Grid gridTemplateColumns='1fr 1fr' gridGap='3rem'>
             <Box>
-              <Heading
-                as='h3'
-                pt={6}
-                fontSize='2xl'
-                color='black'
-                textAlign='center'
-              >
+              <Heading as='h3' pt={6} fontSize='2xl' textAlign='center'>
                 Image Modal
               </Heading>
               <ImageModal image='/assets/images/cody-chan-GXhmQt6MFX8-unsplash.jpg' />
             </Box>
             <Box>
-              <Heading
-                as='h3'
-                pt={6}
-                fontSize='2xl'
-                color='black'
-                textAlign='center'
-              >
+              <Heading as='h3' pt={6} fontSize='2xl' textAlign='center'>
                 Carousel
               </Heading>
               <Carousel slides={slides} />
