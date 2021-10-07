@@ -10,6 +10,7 @@ import {
   ModalContent,
   ModalOverlay,
   Text,
+  useColorMode,
   useDisclosure,
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
@@ -22,6 +23,7 @@ interface CarouselProps {
 }
 
 export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
+  const { colorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const slidesCount = slides.length
@@ -160,11 +162,14 @@ export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
                   motionPreset='slideInBottom'
                   isCentered
                 >
-                  <ModalOverlay />
+                  <ModalOverlay bg='blackAlpha.300' />
                   <ModalContent>
                     <ModalCloseButton rounded='full' />
-                    <ModalBody p={6} transition='all .4s' bg='gray.800'>
-                      {/* FIXME: Fix flash between modal image slides */}
+                    <ModalBody
+                      p={6}
+                      transition='all .4s'
+                      bg={colorMode === 'dark' ? 'gray.800' : 'white'}
+                    >
                       {
                         // Arrow button and indicator labels for more than 1 image
                         slidesCount > 1 && (
