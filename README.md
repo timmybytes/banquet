@@ -21,7 +21,7 @@
 
 ## About
 
-Banquet is an opinionated starter + boilerplate for creating [Next.js](https://nextjs.org/) projects. There are _many_ great starter templates out there for settings up a web development project, but Banquet front-loads many useful tools and configurations as defaults with less tinkering required.
+Banquet is an opinionated starter + boilerplate for creating [Next.js](https://nextjs.org/) projects. Banquet front-loads many useful tools and configurations as defaults with minimal tinkering required.
 
 Banquet comes with the following out of the box:
 
