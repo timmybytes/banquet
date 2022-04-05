@@ -7,11 +7,7 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "maxNodeModuleJsDepth": 0,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -22,42 +18,18 @@
     "strict": true,
     "target": "ESNext",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@data/*": [
-        "src/data/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@public/*": [
-        "public/*"
-      ],
-      "@test/*": [
-        "test/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@theme/*": [
-        "src/theme/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@/*": [
-        "src/*"
-      ]
+      "@components/*": ["src/components/*"],
+      "@data/*": ["src/data/*"],
+      "@pages/*": ["src/pages/*"],
+      "@public/*": ["public/*"],
+      "@test/*": ["test/*"],
+      "@styles/*": ["src/styles/*"],
+      "@theme/*": ["src/theme/*"],
+      "@utils/*": ["src/utils/*"],
+      "@/*": ["src/*"]
     },
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

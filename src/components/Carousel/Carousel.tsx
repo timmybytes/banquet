@@ -181,7 +181,6 @@ export const Carousel = ({ slides }: CarouselProps): React.ReactElement => {
                       }
                       <Image
                         src={slides[currentSlide].img}
-                        size='100%'
                         rounded='lg'
                         shadow='none'
                         width='100%'

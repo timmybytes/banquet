@@ -29,14 +29,15 @@ export const CTAButton = ({
             borderRadius='8px'
             py='4'
             px='4'
-            font='body'
+            // font='body'
             fontSize='lg'
             lineHeight='1'
             size='md'
             _hover={{
               bg: colorMode === 'light' ? color : bgColor,
               color: colorMode === 'light' ? bgColor : color,
-            }}>
+            }}
+          >
             <IoLogoOctocat
               size='22px'
               style={{ display: 'inline', marginRight: '1ch' }}
