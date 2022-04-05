@@ -29,7 +29,6 @@ export const CTAButton = ({
             borderRadius='8px'
             py='4'
             px='4'
-            // font='body'
             fontSize='lg'
             lineHeight='1'
             size='md'

@@ -43,13 +43,13 @@ export const ImageModal = ({
         cursor='pointer'
         position='relative'
         onMouseOver={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}>
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <Image
           // On hover, darken image in light mode and brighten in dark mode
           filter={isHovered ? 'brightness(.5)' : 'none'}
           fit='cover'
           src={image}
-          size='100%'
           width='100%'
           rounded='lg'
           shadow='2xl'
@@ -65,7 +65,8 @@ export const ImageModal = ({
             position='absolute'
             bottom={2}
             right='0'
-            color='white'>
+            color='white'
+          >
             <IoSearch />
             <Text
               color='white'
@@ -73,7 +74,8 @@ export const ImageModal = ({
               fontSize='sm'
               pr={2}
               pl={1}
-              textAlign='right'>
+              textAlign='right'
+            >
               Click to Enlarge
             </Text>
           </Box>
@@ -84,7 +86,8 @@ export const ImageModal = ({
         onClose={onClose}
         size='6xl'
         motionPreset='slideInBottom'
-        isCentered>
+        isCentered
+      >
         <ModalOverlay />
         <ModalContent bg={colorMode === 'light' ? 'white' : 'gray.800'}>
           <ModalHeader>{header}</ModalHeader>
@@ -95,7 +98,6 @@ export const ImageModal = ({
           <ModalBody p={6} onClick={onClose}>
             <Image
               src={image}
-              size='100%'
               rounded='lg'
               shadow='none'
               width='100%'
