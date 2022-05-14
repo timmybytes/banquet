@@ -1,3 +1,5 @@
+<!-- TODO: Upgrade Chakra and/or convert to twin.macro -->
+
 <!-- Header Content -->
 
 <h1 align="center">
