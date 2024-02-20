@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import { CTAButton } from '@components/CTAButton'
+import { FC } from 'react'
 
 type HeroProps = {
   heading: string
@@ -11,7 +12,7 @@ type HeroProps = {
   children?: React.ReactNode
 }
 
-export const Hero = ({
+export const Hero: FC<HeroProps> = ({
   heading,
   subheading,
   image,
@@ -19,7 +20,7 @@ export const Hero = ({
   ctaLabel,
   smallText,
   ...rest
-}: HeroProps): React.ReactElement => {
+}) => {
   return (
     <Flex
       align='center'
